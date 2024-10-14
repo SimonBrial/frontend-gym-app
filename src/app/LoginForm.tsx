@@ -1,0 +1,31 @@
+import TextInput from "@/components/inputs/TextInput";
+import { TypographyH4 } from "@/components/typography/TypographyH4";
+import { Button } from "@/components/ui/button";
+import React from "react";
+
+export default function LoginForm() {
+  return (
+    <div className="flex flex-col gap-[24px] p-6 w-full">
+      <div className="border-2 border-slate-800 bg-slate-900 rounded-[16px] p-[16px] flex flex-col items-center gap-[16px]">
+        <TypographyH4
+          description={"Bienvenido"}
+          fontjura={false}
+          color="text-white"
+        />
+        <TextInput
+          label="Email"
+          classNameLabel="text-white w-full flex flex-col gap-6"
+          className="w-full bg-slate-800 border-slate-700 focus:outline-none focus:border-principal"
+          placeholder="Email"
+        />
+        <TextInput
+          label="Contraseña"
+          classNameLabel="text-white w-full flex flex-col gap-6"
+          className="w-full bg-slate-800 border-slate-700 focus:outline-none focus:border-principal"
+          placeholder="Contraseña"
+        />
+      </div>
+      <Button variant={"principal"}>Ingresar</Button>
+    </div>
+  );
+}
