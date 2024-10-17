@@ -1,7 +1,7 @@
 import TextInput from "@/components/inputs/TextInput";
 import { TypographyH4 } from "@/components/typography/TypographyH4";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import Link from "next/link";
 
 export default function LoginForm() {
   return (
@@ -25,7 +25,9 @@ export default function LoginForm() {
           placeholder="Contraseña"
         />
       </div>
-      <Button variant={"principal"}>Ingresar</Button>
+      <Link href={"/home"}>
+        <Button variant={"principal"}>Ingresar</Button>
+      </Link>
     </div>
   );
 }
