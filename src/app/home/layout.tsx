@@ -9,7 +9,7 @@ export default function HomeLayout({
   return (
     <div className="w-full h-screen bg-slate-800 text-white flex text-3xl">
       <NavSidebar />
-      <div className="w-[80%] bg-red-500">{children}</div>
+      <div className="w-[80%] bg-neutralBlack">{children}</div>
     </div>
   );
 }
