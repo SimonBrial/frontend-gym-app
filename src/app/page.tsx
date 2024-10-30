@@ -1,8 +1,8 @@
-import { TypographyP } from "@/components/typography";
 import imgBackground from "../../public/img/login-background.jpg";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
 import Logo from "@/components/Logo";
+import { Typography } from "@/components/typography";
 
 export default function Login() {
   return (
@@ -17,7 +17,7 @@ export default function Login() {
       <div className="flex flex-col justify-between items-center w-1/4 bg-neutralBlack p-6">
         <Logo />
         <LoginForm />
-        <TypographyP
+        <Typography
           description={"2024 @ Contactar soporte"}
           fontjura={false}
           color="text-white"
