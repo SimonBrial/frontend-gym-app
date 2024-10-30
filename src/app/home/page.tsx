@@ -1,5 +1,3 @@
-import HomeLayout from "./layout";
-
 export default function page() {
-  return <HomeLayout>prueba home</HomeLayout>;
+  return <div className="bg-blue-400">prueba home</div>;
 }
