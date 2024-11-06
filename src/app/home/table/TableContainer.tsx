@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Table,
   TableBody,
@@ -8,8 +8,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import SectionHeader from '@/components/header/SectionHeader'
+} from "@/components/ui/table";
+import SectionHeader from "@/components/SectionHeader";
+import { SearchInput } from "@/components/inputs/SearchInput";
+import TableDB from "./TableDB";
 
 const invoices = [
   {
@@ -54,22 +56,24 @@ const invoices = [
     totalAmount: "$300.00",
     paymentMethod: "Credit Card",
   },
-]
+];
 
 export function TableContainer() {
   return (
     <>
-      <SectionHeader />
-      <div className='p-6'>
+      <SectionHeader label="Clientes" />
+      <div className="p-6 flex flex-col justify-center gap-6">
+        <SearchInput />
         {/* <TextInput /> */}
         {/* <div className='p-6 bg-slate-900'>TableContainer</div> */}
-        <Table className='p-6 bg-slate-900 rounded-lg'>
+        <TableDB />
+        <Table className="p-6 bg-slate-900 rounded-lg">
           <TableCaption>A list of your recent invoices.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px text-white">Cedula</TableHead>
-              <TableHead className='text-white'>Nombre </TableHead>
-              <TableHead className='text-white'>Apellido</TableHead>
+              <TableHead className="text-white">Nombre </TableHead>
+              <TableHead className="text-white">Apellido</TableHead>
               <TableHead className="text-white">Corte</TableHead>
               <TableHead className="text-white">Estatus</TableHead>
               <TableHead className="text-right text-white">Acciones</TableHead>
@@ -83,18 +87,22 @@ export function TableContainer() {
                 <TableCell>{invoice.paymentMethod}</TableCell>
                 <TableCell className="">{invoice.totalAmount}</TableCell>
                 <TableCell className="">{invoice.totalAmount}</TableCell>
-                <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+                <TableCell className="text-right">
+                  {invoice.totalAmount}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
           <TableFooter>
-            <TableRow className='bg-slate-900'>
+            <TableRow className="bg-slate-900">
               <TableCell colSpan={5}>Total</TableCell>
-              <TableCell colSpan={1} className="text-right">7 inscripciones</TableCell>
+              <TableCell colSpan={1} className="text-right">
+                7 inscripciones
+              </TableCell>
             </TableRow>
           </TableFooter>
         </Table>
       </div>
     </>
-  )
+  );
 }

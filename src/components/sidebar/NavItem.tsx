@@ -1,6 +1,6 @@
 "use client";
 
-import { NavSections } from "@/interface";
+import { NavSections } from "@/interface/interfaces";
 import { Typography } from "../typography";
 import Link from "next/link";
 import { Button } from "../ui/button";

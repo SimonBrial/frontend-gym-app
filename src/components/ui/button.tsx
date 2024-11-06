@@ -24,6 +24,8 @@ const buttonVariants = cva(
           "hover:bg-slate-700 rounded-lg w-full flex items-center justify-start",
         activeNavItem:
           "rounded-none rounded-r-lg w-full flex items-center justify-start border-l-2 border-l-principal bg-slate-800",
+        addUser:
+          "text-principal flex gap-1 hover:bg-principal/10 transition-all hover:cursor-pointer",
       },
       size: {
         default: "h-10 px-4 py-2",

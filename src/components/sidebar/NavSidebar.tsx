@@ -1,4 +1,4 @@
-import { NavSections } from "@/interface";
+import { NavSections } from "@/interface/interfaces";
 import { HouseSimple, User, Gear, Power } from "@phosphor-icons/react/dist/ssr";
 import NavItem from "./NavItem";
 import Logo from "../Logo";
