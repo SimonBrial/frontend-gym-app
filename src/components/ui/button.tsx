@@ -26,6 +26,8 @@ const buttonVariants = cva(
           "rounded-none rounded-r-lg w-full flex items-center justify-start border-l-2 border-l-principal bg-slate-800",
         addUser:
           "text-principal flex gap-1 hover:bg-principal/10 transition-all hover:cursor-pointer",
+        userAction:
+          "text-white bg-slate-800 text-lg hover:text-principal transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",

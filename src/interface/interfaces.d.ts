@@ -22,6 +22,7 @@ interface TableData {
   corte: Date;
   tipo: string;
   _id: string;
+  acciones: string;
 }
 
 export type { NavSections, TypographyProps, TableData };

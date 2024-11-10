@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import {
   ColumnDef,
@@ -148,9 +148,9 @@ export const columns: ColumnDef<Payment>[] = [
       );
     },
   },
-];
+]; */
 export default function TableDB() {
-  const [sorting, setSorting] = useState<SortingState>([]);
+  /* const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
@@ -172,9 +172,9 @@ export default function TableDB() {
       columnVisibility,
       rowSelection,
     },
-  });
+  }); */
 
-  return (
+  /* return (
     <div className="w-full">
       <div className="flex items-center py-4">
         <DropdownMenu>
@@ -279,5 +279,6 @@ export default function TableDB() {
         </div>
       </div>
     </div>
-  );
+  ); */
+  return <>hi</>;
 }

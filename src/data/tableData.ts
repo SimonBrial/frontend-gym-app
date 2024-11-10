@@ -8,6 +8,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Paid",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -16,6 +17,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Pending",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -24,6 +26,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Unpaid",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -32,6 +35,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Paid",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -40,6 +44,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Paid",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -48,6 +53,7 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Pending",
     corte: new Date(),
+    acciones: ""
   },
   {
     _id: crypto.randomUUID(),
@@ -56,5 +62,6 @@ export const invoices: TableData[] = [
     tipo: "semanal",
     status: "Unpaid",
     corte: new Date(),
+    acciones: ""
   },
 ];

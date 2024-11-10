@@ -2,6 +2,9 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { TableData } from "@/interface/interfaces";
 import { format } from "date-fns";
+import { Button } from "../ui/button";
+import { Note, Trash, NotePencil } from "@phosphor-icons/react/dist/ssr";
+import ToolTipLayout from "../ToolTipLayout";
 
 export function TableItems({ dataArray }: { dataArray: TableData[] }) {
   return dataArray.map((inv: TableData) => {
@@ -15,8 +18,25 @@ export function TableItems({ dataArray }: { dataArray: TableData[] }) {
         <TableCell>{cedula}</TableCell>
         <TableCell>{capitalizeFirstLetter(tipo)}</TableCell>
         <TableCell>{capitalizeFirstLetter(status)}</TableCell>
-        <TableCell className="text-right">
+        <TableCell className="">
           {format(corte, "MM/dd/yyyy")}
+        </TableCell>
+        <TableCell className="flex gap-2.5">
+          <ToolTipLayout label="ver">
+            <Button variant="userAction">
+              <Note />
+            </Button>
+          </ToolTipLayout>
+          <ToolTipLayout label="editar">
+            <Button variant="userAction">
+              <NotePencil />
+            </Button>
+          </ToolTipLayout>
+          <ToolTipLayout label="eliminar">
+            <Button variant="userAction">
+              <Trash />
+            </Button>
+          </ToolTipLayout>
         </TableCell>
       </TableRow>
     );
