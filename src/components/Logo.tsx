@@ -1,11 +1,12 @@
-import { TypographyH3 } from "@/components/typography";
+import { Typography } from "./Typography";
+
 
 function Logo() {
   return (
     <div className="flex gap-1">
-      <TypographyH3 description={"SMART"} fontjura color="text-white" />
-      <TypographyH3 description={"GYM"} fontjura color="text-principal" />
-      <TypographyH3 description={"ADMIN"} fontjura color="text-white" />
+      <Typography type="h3" description={"SMART"} fontjura color="text-white" />
+      <Typography type="h3" description={"GYM"} fontjura color="text-principal" />
+      <Typography type="h3" description={"ADMIN"} fontjura color="text-white" />
     </div>
   );
 }

@@ -1,3 +1,9 @@
+import SectionHeader from "@/components/SectionHeader";
+
 export default function page() {
-  return <div className="bg-blue-400">prueba 2.0</div>;
+  return (
+    <div className="">
+      <SectionHeader label="descripcion de usuario" />
+    </div>
+  );
 }

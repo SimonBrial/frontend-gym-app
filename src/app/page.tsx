@@ -2,7 +2,7 @@ import imgBackground from "../../public/img/login-background.jpg";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
 import Logo from "@/components/Logo";
-import { Typography } from "@/components/typography";
+import { Typography } from "@/components/Typography";
 
 export default function Login() {
   return (
@@ -18,6 +18,7 @@ export default function Login() {
         <Logo />
         <LoginForm />
         <Typography
+          type="p"
           description={"2024 @ Contactar soporte"}
           fontjura={false}
           color="text-white"
