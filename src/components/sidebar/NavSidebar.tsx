@@ -76,7 +76,7 @@ export default function NavSidebar() {
         }`}
       >
         {" "}
-        <nav className="flex flex-col gap-1 items-center w-full h-[92%] border-transparent border-2 border-b-slate-700 mb-4 bg-slate-900">
+        <nav className="flex flex-col gap-1 items-center w-full h-[88%] border-transparent border-2 border-b-slate-700 mb-4 bg-slate-900">
           {" "}
           {sections.map((section, index) => (
             <NavItem item={section} key={index} fnCloseMenu={setShow} />
