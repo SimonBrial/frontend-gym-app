@@ -6,12 +6,12 @@ import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 
 export default function SectionHeader({ label }: { label: string }) {
   return (
-    <div className="w-full px-6 py-4 bg-slate-900 flex justify-between items-center">
+    <div className="w-full px-6 pt-16 pb-3 sm:py-4 bg-slate-900 flex justify-between items-center">
       <div>
         <Typography
           description={capitalizeFirstLetter(label)}
           fontjura
-          type="h2"
+          type="h3"
         />
       </div>
       <Link href={"#"}>

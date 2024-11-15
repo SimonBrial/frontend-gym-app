@@ -7,9 +7,9 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full h-screen bg-slate-800 text-white flex text-3xl">
+    <div className="w-full h-screen bg-slate-800 text-white flex flex-col sm:flex-row text-3xl">
       <NavSidebar />
-      <div className="w-[80%] bg-neutralBlack">{children}</div>
+      <div className="w-full sm:w-[80%] bg-neutralBlack">{children}</div>
     </div>
   );
 }

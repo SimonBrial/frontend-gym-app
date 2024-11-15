@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 
 export function SearchInput() {
   return (
-    <div className="flex items-center py-1.5 px-4 rounded-full border border-slate-700 w-[40%]">
+    <div className="flex items-center py-1.5 px-4 rounded-full border border-slate-700 w-full sm:w-[40%]">
       <Button className="p-2 bg-transparent text-slate-400 hover:bg-transparent hover:text-principal transition-all">
         <MagnifyingGlass size={24} />
       </Button>
