@@ -1,28 +1,20 @@
-"use client";
-
-import { NavSections } from "@/interface/interfaces";
+import { NavItemProps } from "@/interface/interfaces";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { usePathname } from "next/navigation";
 import { Typography } from "../Typography";
 
-export default function NavItem({ item, fnCloseMenu }: { item: NavSections; fnCloseMenu?: (value: boolean) => void}) {
-  const path = usePathname().split("/");
-  // console.log(path[path.length - 1]);
-  const dir = item.dir.split("/");
+export default function NavItem({ item, fnCloseMenu, active }: NavItemProps) {
   return (
     <Button
-      variant={
-        path[path.length - 1] === dir[dir.length - 1]
-          ? "activeNavItem"
-          : "navItem"
-      }
+      variant={active ? "activeNavItem" : "navItem"}
       className="text-red-500"
       asChild
       onClick={() => fnCloseMenu?.(false)}
     >
       <Link href={item.dir} className="w-full p-2  hover:cursor-pointer group">
-        <span className="text-lg text-white  group-hover:text-principal group-hover:cursor-pointer">{item.icon}</span>{" "}
+        <span className="text-lg text-white  group-hover:text-principal group-hover:cursor-pointer">
+          {item.icon}
+        </span>{" "}
         <Typography
           type="p"
           description={item.label}

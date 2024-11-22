@@ -25,4 +25,10 @@ interface TableData {
   acciones: string;
 }
 
-export type { NavSections, TypographyProps, TableData };
+interface NavItemProps {
+  item: NavSections;
+  fnCloseMenu?: (value: boolean) => void;
+  active?: boolean;
+}
+
+export type { NavSections, TypographyProps, TableData, NavItemProps };

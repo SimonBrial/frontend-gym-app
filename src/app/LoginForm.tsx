@@ -27,7 +27,7 @@ export default function LoginForm() {
           placeholder="Contraseña"
         />
       </div>
-      <Link href={"/home"}>
+      <Link href={"/h/home"}>
         <Button variant={"principal"}>Ingresar</Button>
       </Link>
     </div>
