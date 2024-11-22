@@ -1,5 +1,10 @@
-import { TableContainer } from "../../components/table/TableContainer";
+import TableContainer from "@/components/table/TableContainer";
+
 
 export default function page() {
-  return <TableContainer />;
+  return (
+    <div>
+      <TableContainer />
+    </div>
+  );
 }

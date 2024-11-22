@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 import TextInput from "./TextInput";
 
-export function SearchInput() {
+export default function SearchInput() {
   return (
     <div className="flex items-center py-1.5 px-4 rounded-full border border-slate-700 w-full sm:w-[40%]">
       <Button className="p-2 bg-transparent text-slate-400 hover:bg-transparent hover:text-principal transition-all">

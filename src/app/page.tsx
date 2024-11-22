@@ -3,7 +3,7 @@ import imgBgMobile from "../../public/img/bg-login-mobile.jpg";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
 import Logo from "@/components/Logo";
-import { Typography } from "@/components/Typography";
+import Typography from "@/components/Typography";
 
 export default function Login() {
   return (

@@ -1,5 +1,5 @@
 import TextInput from "@/components/inputs/TextInput";
-import { Typography } from "@/components/Typography";
+import Typography from "@/components/Typography";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

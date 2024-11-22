@@ -1,7 +1,7 @@
 import { NavItemProps } from "@/interface/interfaces";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { Typography } from "../Typography";
+import Typography from "../Typography";
 
 export default function NavItem({ item, fnCloseMenu, active }: NavItemProps) {
   return (
