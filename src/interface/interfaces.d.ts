@@ -31,4 +31,15 @@ interface NavItemProps {
   active?: boolean;
 }
 
-export type { NavSections, TypographyProps, TableData, NavItemProps };
+interface InputProps {
+  [x: string]: any;
+  classNameContainer: string;
+}
+
+export type {
+  TypographyProps,
+  NavItemProps,
+  NavSections,
+  InputProps,
+  TableData,
+};

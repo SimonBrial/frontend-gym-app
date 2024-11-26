@@ -14,7 +14,7 @@ export default function Typography({
   if (type === "h1") {
     return (
       <h1
-        className={`scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl cursor-default ${color} ${
+        className={`scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl cursor-default ${color} ${classes} ${
           underscore ? "border-b" : "border-none"
         } ${fontjura ? jura.className : ""}`}
       >
@@ -26,7 +26,7 @@ export default function Typography({
   if (type === "h2") {
     return (
       <h2
-        className={`scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 cursor-default ${color} ${
+        className={`scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 cursor-default ${color} ${classes} ${
           underscore ? "border-b" : "border-none"
         } ${fontjura ? jura.className : ""}`}
       >
@@ -37,7 +37,7 @@ export default function Typography({
   if (type === "h3") {
     return (
       <h3
-        className={`scroll-m-20 text-2xl font-semibold tracking-tight cursor-default ${color} ${
+        className={`scroll-m-20 text-2xl font-semibold tracking-tight cursor-default ${color} ${classes} ${
           underscore ? "border-b" : "border-none"
         } ${fontjura ? jura.className : ""}`}
       >
@@ -48,7 +48,7 @@ export default function Typography({
   if (type === "h4") {
     return (
       <h4
-        className={`scroll-m-20 text-xl font-semibold tracking-tight cursor-default ${color} ${
+        className={`scroll-m-20 text-xl font-semibold tracking-tight cursor-default ${color} ${classes} ${
           underscore ? "border-b" : "border-none"
         } ${fontjura ? jura.className : ""}`}
       >
@@ -59,9 +59,9 @@ export default function Typography({
   if (type === "p") {
     return (
       <p
-        className={`leading-7 [&:not(:first-child)]:mt-0 align-middle cursor-default ${color} ${
+        className={`leading-7 [&:not(:first-child)]:mt-0 align-middle cursor-default ${color} ${classes} ${
           underscore ? "border-b" : "border-none"
-        } ${classes} ${fontjura ? jura.className : ""}`}
+        } ${fontjura} ${fontjura ? jura.className : ""}`}
       >
         {description}
       </p>

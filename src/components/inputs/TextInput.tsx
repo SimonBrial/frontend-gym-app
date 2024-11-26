@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
 export default function TextInput({
-  classNameLabel,
+  classNameContainer,
   ...props
 }: {
   [x: string]: any;
-  classNameLabel: string;
+  classNameContainer: string;
 }) {
   return (
-    <div className={classNameLabel}>
+    <div className={classNameContainer}>
       <Label htmlFor={props.label}>{props.label}</Label>
-      <Input type="text" {...props} />
+      <Input type="text" {...props} placeholder={props.label}/>
     </div>
   );
 }

@@ -16,13 +16,13 @@ export default function LoginForm() {
         />
         <TextInput
           label="Email"
-          classNameLabel="text-white w-full flex flex-col gap-6"
+          classNameContainer="text-white w-full flex flex-col gap-6"
           className="w-full bg-slate-800 border-slate-700 focus:outline-none focus:border-principal"
           placeholder="Email"
         />
         <TextInput
           label="Contraseña"
-          classNameLabel="text-white w-full flex flex-col gap-6"
+          classNameContainer="text-white w-full flex flex-col gap-6"
           className="w-full bg-slate-800 border-slate-700 focus:outline-none focus:border-principal"
           placeholder="Contraseña"
         />

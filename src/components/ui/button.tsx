@@ -13,13 +13,13 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-white bg-transparent hover:bg-white/50 text-white w-full",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-transparent hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
         principal:
-          "bg-principal text-principal-foreground hover:bg-principal/90 w-full rounded-[6px] py-[8px] px-[16px]",
+          "bg-principal text-slate-900 hover:bg-principal/90 w-full rounded-[6px] py-[8px] px-[16px]",
         navItem:
           "hover:bg-slate-700 rounded-lg w-full flex items-center justify-start",
         activeNavItem:

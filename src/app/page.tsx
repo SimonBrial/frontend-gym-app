@@ -1,6 +1,6 @@
 import imgBgDesktop from "../../public/img/login-background.jpg";
 import imgBgMobile from "../../public/img/bg-login-mobile.jpg";
-import LoginForm from "./LoginForm";
+import LoginForm from "./h/layout/LoginForm";
 import Image from "next/image";
 import Logo from "@/components/Logo";
 import Typography from "@/components/Typography";

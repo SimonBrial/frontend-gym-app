@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { Note, Trash, NotePencil } from "@phosphor-icons/react/dist/ssr";
 import ToolTipLayout from "../ToolTipLayout"; */
 
-export default function TableItems({ dataArray }: { dataArray: TableData[] }) {
+export default function DesktopTableItems({ dataArray }: { dataArray: TableData[] }) {
   return dataArray.map((inv: TableData) => {
     const { cedula, corte, nombre, status, tipo, _id } = inv;
     return (

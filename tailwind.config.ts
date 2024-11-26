@@ -13,6 +13,7 @@ const config: Config = {
       colors: {
         principal: "#ADFF2F",
         neutralBlack: "#010B13",
+        placeholderText: "#94A3B8",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

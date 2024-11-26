@@ -10,7 +10,7 @@ export default function SearchInput() {
         <MagnifyingGlass size={24} />
       </Button>
       <TextInput
-        classNameLabel="w-full pr-2"
+        classNameContainer="w-full pr-2"
         className="h-8 bg-transparent border-transparent focus:border-transparent focus:outline-none focus:ring-1 focus:ring-principal"
         placeholder={"Buscar usuario"}
       />
