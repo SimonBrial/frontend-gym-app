@@ -11,7 +11,7 @@ export default function ToolTipLayout({
 }) {
   return (
     <Tooltip>
-      <TooltipTrigger>{children}</TooltipTrigger>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
       <TooltipContent>{capitalizeFirstLetter(label)}</TooltipContent>
     </Tooltip>
   );

@@ -2,11 +2,22 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { TableData } from "@/interface/interfaces";
 import { format } from "date-fns";
-/* import { Button } from "../ui/button";
 import { Note, Trash, NotePencil } from "@phosphor-icons/react/dist/ssr";
-import ToolTipLayout from "../ToolTipLayout"; */
+import ToolTipLayout from "@/components/ToolTipLayout";
+import { Button } from "@/components/ui";
+import Link from "next/link";
 
-export default function DesktopTableItems({ dataArray }: { dataArray: TableData[] }) {
+export default function DesktopTableItems({
+  dataArray,
+}: {
+  dataArray: TableData[];
+}) {
+  const actionsItem = [
+    { dir: "/h/home", icon: <Note />, label: "ver" },
+    { dir: "/h/home", icon: <NotePencil />, label: "editar" },
+    { dir: "/h/home", icon: <Trash />, label: "eliminar" },
+  ];
+
   return dataArray.map((inv: TableData) => {
     const { cedula, corte, nombre, status, tipo, _id } = inv;
     return (
@@ -18,27 +29,18 @@ export default function DesktopTableItems({ dataArray }: { dataArray: TableData[
         <TableCell>{cedula}</TableCell>
         <TableCell>{capitalizeFirstLetter(tipo)}</TableCell>
         <TableCell>{capitalizeFirstLetter(status)}</TableCell>
-        <TableCell className="">
-          {format(corte, "MM/dd/yyyy")}
-        </TableCell>
+        <TableCell className="">{format(corte, "MM/dd/yyyy")}</TableCell>
         <TableCell className="flex gap-2.5">
-          {/* TODO: There is an hydratation problem with those buttons */}
-          {/* <ToolTipLayout label="ver">
-            <Button variant="userAction">
-              <Note />
-            </Button>
-          </ToolTipLayout>
-          <ToolTipLayout label="editar">
-            <Button variant="userAction">
-              <NotePencil />
-            </Button>
-          </ToolTipLayout>
-          <ToolTipLayout label="eliminar">
-            <Button variant="userAction">
-              <Trash />
-            </Button>
-          </ToolTipLayout> */}
-          prueba
+          {actionsItem.map((actionsItem) => {
+            const { dir, icon, label } = actionsItem;
+            return (
+              <ToolTipLayout label={label} key={label}>
+                <Link href={dir}>
+                  <Button variant="userAction">{icon}</Button>
+                </Link>
+              </ToolTipLayout>
+            );
+          })}
         </TableCell>
       </TableRow>
     );

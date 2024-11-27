@@ -84,7 +84,7 @@ export default function CreateUserLayout() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel asChild className="w-full">
+            <AlertDialogCancel asChild className="w-full hover:bg-transparent">
               <Link href={"/h/users/list"} className="w-full bg-transparent border-none hover:bg-transparent">
                 <Button variant="principal">Listo</Button>
               </Link>
