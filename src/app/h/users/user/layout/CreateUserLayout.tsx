@@ -65,8 +65,8 @@ export default function CreateUserLayout() {
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-[6px]">
           <AlertDialogHeader className="flex flex-col text-white justify-center items-center">
-            <span className="">
-              <CheckCircle className="h-10 w-10 text-slate-800 rounded-full bg-white" />
+            <span>
+              <CheckCircle size={40} weight="fill" />
             </span>
             <AlertDialogTitle asChild>
               <Typography
@@ -85,7 +85,10 @@ export default function CreateUserLayout() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel asChild className="w-full hover:bg-transparent">
-              <Link href={"/h/users/list"} className="w-full bg-transparent border-none hover:bg-transparent">
+              <Link
+                href={"/h/users/list"}
+                className="w-full bg-transparent border-none hover:bg-transparent"
+              >
                 <Button variant="principal">Listo</Button>
               </Link>
             </AlertDialogCancel>
