@@ -40,7 +40,7 @@ export default function NavSidebar() {
 
   return (
     <div
-      className={`w-full fixed z-10 sm:h-full sm:relative sm:w-[20%] sm:flex flex-col items-center sm:justify-center py-4 px-2 transition-all duration-500 ease-in-out ${
+      className={`w-full fixed z-10 sm:h-full sm:relative sm:w-[20%] sm:flex flex-col items-center sm:justify-center py-5 px-2 transition-all duration-500 ease-in-out ${
         show ? "bg-slate-900 h-screen opacity-100" : "bg-slate-900 opacity-100"
       }`}
     >
@@ -66,7 +66,7 @@ export default function NavSidebar() {
       </div>
       {/*---------------------------- Desktop Navbar ----------------------------*/}
       <div className="hidden sm:flex flex-col w-full h-full justify-between pt-8 pb-0 bg-slate-900">
-        <nav className="flex flex-col gap-1 items-center w-full h-[94%] border-transparent border-2 border-b-slate-700 mb-4 bg-slate-900">
+        <nav className="flex flex-col gap-1 items-center w-full h-[94%] border-transparent border-2 border-b-slate-700 mb-4 pt-5 bg-slate-900">
           {sections.map((section, index) => (
             <NavItem item={section} key={index} active={index === active} />
           ))}
@@ -88,7 +88,7 @@ export default function NavSidebar() {
             : "w-[60%] fixed top-0 bottom-0 left-[-100%] bg-slate-900 opacity-0"
         }`}
       >
-        <nav className="flex flex-col gap-1 items-center w-full h-[88%] border-transparent border-2 border-b-slate-700 mb-4 bg-slate-900">
+        <nav className="flex flex-col gap-1 items-center w-full h-[88%] border-transparent border-2 border-b-slate-700 mb-4 bg-slate-900 pt-3">
           {sections.map((section, index) => (
             <NavItem
               item={section}

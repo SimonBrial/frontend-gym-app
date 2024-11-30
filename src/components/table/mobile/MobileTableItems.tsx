@@ -6,16 +6,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Barbell } from "@phosphor-icons/react/dist/ssr/Barbell";
 import { Button } from "@/components/ui";
+import { invoices } from "@/data/tableData";
+import Link from "next/link";
 
-export default function MobileTableItems({
-  dataArray,
-}: {
-  dataArray: TableData[];
-}) {
+export default function MobileTableItems() {
   return (
     <div>
       <ul className="flex flex-col gap-3">
-        {dataArray.map((inv: TableData) => {
+        {invoices.map((inv: TableData, idx) => {
           const { cedula, corte, nombre, _id } = inv;
           return (
             <li
@@ -30,12 +28,16 @@ export default function MobileTableItems({
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <div className="flex justify-center items-center gap-4 py-2 px-6 border-2 border-principal rounded-[6px]">
+                <div
+                  className={`flex justify-center items-center gap-4 py-2 px-6 border-2 ${
+                    idx % 2 ? "border-principal" : "border-red-500"
+                  }  rounded-[6px]`}
+                >
                   <span className="h-[35px] w-[25px] -mb-1">
                     <Barbell size={30} />
                   </span>
                   <Typography
-                    description="Solvente"
+                    description={idx % 2 ? "Solvente" : "En Mora"}
                     fontjura={false}
                     type="h2"
                     classes="-mb-1"
@@ -62,14 +64,18 @@ export default function MobileTableItems({
                 />
                 <Badge
                   variant="outline"
-                  className="text-principal border-principal text-xl"
+                  className={` ${
+                    idx % 2
+                      ? "border-principal text-principal bg-principal/20"
+                      : "border-red-500 text-red-500 bg-red-500/20"
+                  } text-xl`}
                 >
                   {format(corte, "MM/dd/yyyy")}
                 </Badge>
               </div>
               <div className="flex flex-col gap-2 p-4">
                 <Button variant="outline">Renovar suscripción</Button>
-                <Button variant="outline">Editar datos</Button>
+                <Link href={`/h/users/user/edit/${_id}`}><Button variant="outline">Editar datos</Button></Link>
               </div>
             </li>
           );

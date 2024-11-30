@@ -11,11 +11,11 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-red-500 text-white hover:bg-red-500/90 w-full",
         outline:
-          "border border-white bg-transparent hover:bg-white/50 text-white w-full",
+          "border border-white bg-transparent sm-hover:bg-white/50 active:bg-white/50 text-white w-full",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "text-white bg-slate-700/80 hover:bg-slate-800 border-none",
         ghost: "hover:bg-transparent hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
         principal:
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         addUser:
           "text-principal flex gap-1 hover:bg-principal/10 transition-all hover:cursor-pointer",
         userAction:
-          "text-white bg-slate-800 text-lg hover:text-principal transition-all",
+          "text-white bg-slate-800 text-lg sm-hover:text-principal active:text-principal transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",

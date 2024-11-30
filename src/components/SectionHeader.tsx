@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { usePathname } from "next/navigation";
 import Typography from "./Typography";
+import { Button } from "./ui";
 
 export default function SectionHeader({ label }: { label: string }) {
   const path = usePathname().split("/");
