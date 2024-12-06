@@ -63,7 +63,7 @@ export default function CreateUserLayout() {
             Registrar
           </Button>
         </AlertDialogTrigger>
-        <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-[6px]">
+        <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-md">
           <AlertDialogHeader className="flex flex-col text-white justify-center items-center">
             <span>
               <CheckCircle size={40} weight="fill" />
@@ -95,6 +95,11 @@ export default function CreateUserLayout() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+      <Link href={"/h/users/list"} className="w-full">
+        <Button variant="outline" className="">
+          Cancelar
+        </Button>
+      </Link>
     </div>
   );
 }

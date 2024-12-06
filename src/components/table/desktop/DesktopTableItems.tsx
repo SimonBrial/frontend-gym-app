@@ -60,7 +60,7 @@ export default function DesktopTableItems({
                 </Button>
               </AlertDialogTrigger>
             </ToolTipLayout>
-            <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-[6px]">
+            <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-md">
               <AlertDialogHeader className="flex flex-col text-white justify-center items-center">
                 <span>
                   <Trash size={40} weight="fill" />

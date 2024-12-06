@@ -15,11 +15,11 @@ const buttonVariants = cva(
         outline:
           "border border-white bg-transparent sm-hover:bg-white/50 active:bg-white/50 text-white w-full",
         secondary:
-          "text-white bg-slate-700/80 hover:bg-slate-800 border-none",
+          "text-red-500 bg-slate-600 hover:bg-slate-600/80 border-none",
         ghost: "hover:bg-transparent hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
         principal:
-          "bg-principal text-slate-900 hover:bg-principal/90 w-full rounded-[6px] py-[8px] px-[16px]",
+          "bg-principal text-slate-900 hover:bg-principal/90 w-full rounded-md py-[8px] px-[16px]",
         navItem:
           "hover:bg-slate-700 rounded-lg w-full flex items-center justify-start",
         activeNavItem:
@@ -28,6 +28,7 @@ const buttonVariants = cva(
           "text-principal flex gap-1 hover:bg-principal/10 transition-all hover:cursor-pointer",
         userAction:
           "text-white bg-slate-800 text-lg sm-hover:text-principal active:text-principal transition-all",
+        registerNav: "rounded-full border border-red-500 w-full"
       },
       size: {
         default: "h-10 px-4 py-2",

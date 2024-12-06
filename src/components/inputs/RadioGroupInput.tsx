@@ -22,7 +22,7 @@ export default function RadioGroupInput({
       >
         {items.map((item) => (
           <div
-            className="flex items-center space-x-2 border border-slate-600 p-2 rounded-[6px] w-full flex-1 bg-slate-800"
+            className="flex items-center space-x-2 border border-slate-600 p-2 rounded-md w-full flex-1 bg-slate-800"
             key={item}
           >
             <RadioGroupItem value={`option-${item}`} id={`option-${item}`} />

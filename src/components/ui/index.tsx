@@ -1,4 +1,17 @@
-import { DropdownMenu } from "./dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "./dropdown-menu";
 import { Button } from "./button";
 import { Drawer } from "./drawer";
 import { Form } from "./form";
@@ -30,33 +43,55 @@ import {
   Select,
 } from "./select";
 import { RadioGroup, RadioGroupItem } from "./radio-group";
+import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
+import { Badge } from "./badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 
 export {
   AlertDialogDescription,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
   AlertDialogTrigger,
   AlertDialogContent,
+  DropdownMenuPortal,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogFooter,
   AlertDialogHeader,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
   AlertDialogTitle,
+  DropdownMenuItem,
   TooltipProvider,
+  DropdownMenuSub,
+  AvatarFallback,
   TooltipTrigger,
   TooltipContent,
   RadioGroupItem,
   SelectTrigger,
   SelectContent,
   DropdownMenu,
+  AvatarImage,
   AlertDialog,
+  TabsTrigger,
   SelectValue,
+  TabsContent,
   RadioGroup,
   SelectItem,
+  TabsList,
   Tooltip,
   Select,
   Drawer,
   Button,
+  Avatar,
   Input,
   Label,
   Table,
+  Badge,
+  Tabs,
   Form,
 };
