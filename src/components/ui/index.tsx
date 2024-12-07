@@ -46,6 +46,18 @@ import { RadioGroup, RadioGroupItem } from "./radio-group";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Badge } from "./badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
+import {
+  DialogDescription,
+  DialogTrigger,
+  DialogContent,
+  DialogOverlay,
+  DialogPortal,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogClose,
+  Dialog,
+} from "./dialog";
 
 export {
   AlertDialogDescription,
@@ -64,6 +76,7 @@ export {
   AlertDialogHeader,
   DropdownMenuGroup,
   DropdownMenuLabel,
+  DialogDescription,
   AlertDialogTitle,
   DropdownMenuItem,
   TooltipProvider,
@@ -72,9 +85,17 @@ export {
   TooltipTrigger,
   TooltipContent,
   RadioGroupItem,
+  DialogTrigger,
+  DialogContent,
+  DialogOverlay,
   SelectTrigger,
   SelectContent,
+  DialogPortal,
+  DialogHeader,
+  DialogFooter,
   DropdownMenu,
+  DialogTitle,
+  DialogClose,
   AvatarImage,
   AlertDialog,
   TabsTrigger,
@@ -84,6 +105,7 @@ export {
   SelectItem,
   TabsList,
   Tooltip,
+  Dialog,
   Select,
   Drawer,
   Button,

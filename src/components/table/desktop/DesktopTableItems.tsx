@@ -24,7 +24,6 @@ export default function DesktopTableItems({
 }: {
   dataArray: TableData[];
 }) {
-
   return dataArray.map((inv: TableData) => {
     const { cedula, corte, nombre, status, tipo, _id } = inv;
     return (
@@ -82,10 +81,17 @@ export default function DesktopTableItems({
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel asChild>
-                  <Button variant="secondary">Cancelar</Button>
+                  <Button variant="secondary" className="bg-slate-800">
+                    Cancelar
+                  </Button>
                 </AlertDialogCancel>
                 <AlertDialogAction asChild>
-                  <Button variant="destructive">Eliminar</Button>
+                  <Button
+                    variant="destructive"
+                    className="bg-red-500 active:bg-red-600 hover:bg-red-600"
+                  >
+                    Eliminar
+                  </Button>
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>

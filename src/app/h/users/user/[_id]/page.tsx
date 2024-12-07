@@ -1,11 +1,12 @@
 import SectionHeader from "@/components/SectionHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import ReadUserLayout from "../layout/ReadUserLayout";
+import ReceiptsLayout from "../layout/ReceiptsLayout";
 
 export default function page() {
   return (
     <div className="bg-neutralBlack pb-5">
-      <SectionHeader label="descripcion del cliente" />
+      <SectionHeader label="Perfil del cliente" />
       {/* <div className="flex gap-1 justify-center items-center">
         <Button variant="registerNav">Perfil cliente</Button>
         <Button variant="registerNav">Recibos</Button>
@@ -16,7 +17,7 @@ export default function page() {
           <TabsTrigger value="receipts" className="text-slate-700 rounded-full">Recibos</TabsTrigger>
         </TabsList>
         <TabsContent value="profile"><ReadUserLayout /></TabsContent>
-        <TabsContent value="receipts">Recibos</TabsContent>
+        <TabsContent value="receipts"><ReceiptsLayout /></TabsContent>
       </Tabs>
     </div>
   );

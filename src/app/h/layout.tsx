@@ -1,5 +1,4 @@
 import NavSidebar from "@/components/sidebar/NavSidebar";
-import React from "react";
 
 export default function HomeLayout({
   children,

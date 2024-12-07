@@ -2,38 +2,9 @@ import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { TableData } from "@/interface/interfaces";
 import { format } from "date-fns";
 import Typography from "@/components/Typography";
-import {
-  DotsThreeOutlineVertical,
-  NotePencil,
-  Barbell,
-  // Trash,
-  Note,
-} from "@phosphor-icons/react/dist/ssr";
-import {
-  // AlertDialogDescription,
-  DropdownMenuSeparator,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-  /* AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogFooter,
-  AlertDialogHeader, */
-  DropdownMenuGroup,
-  // AlertDialogTitle,
-  DropdownMenuItem,
-  AvatarFallback,
-  DropdownMenu,
-  // AlertDialog,
-  AvatarImage,
-  Button,
-  Avatar,
-  Badge,
-} from "@/components/ui";
-import Link from "next/link";
-/* import { Button } from "@/components/ui";
-import Link from "next/link"; */
+import { Barbell } from "@phosphor-icons/react/dist/ssr";
+import { AvatarFallback, AvatarImage, Avatar, Badge } from "@/components/ui";
+import BtnUserActions from "./BtnUserActions";
 
 export default function MobileTableItems({
   item,
@@ -69,86 +40,7 @@ export default function MobileTableItems({
               classes="text-base"
             />
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant={"ghost"} className="px-0.5 text-2xl">
-                <DotsThreeOutlineVertical weight="fill" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-slate-900 rounded-md text-white border border-slate-800 mr-12">
-              <DropdownMenuGroup>
-                <Link href={`/h//users/user/${item._id}`}>
-                  <DropdownMenuItem className="active:bg-principal/50 rounded-md">
-                    <Note />
-                    <Typography
-                      description="Ver"
-                      fontjura={false}
-                      type="h4"
-                      classes="font-light"
-                    />
-                  </DropdownMenuItem>
-                </Link>
-                <Link href={`/h/users/user/edit/${item._id}`}>
-                  <DropdownMenuItem className="active:bg-orange-500/50 rounded-md">
-                    <NotePencil />
-                    <Typography
-                      description="Editar"
-                      fontjura={false}
-                      type="h4"
-                      classes="font-light"
-                    />
-                  </DropdownMenuItem>
-                </Link>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator className="bg-slate-800" />
-
-              {/* <AlertDialog>
-                <AlertDialogTrigger>
-                  <DropdownMenuItem className="active:bg-red-500/50">
-                    <Trash />
-                    <Typography
-                      description="Eliminar"
-                      fontjura={false}
-                      type="h4"
-                      classes="font-light"
-                    />
-                  </DropdownMenuItem>
-                </AlertDialogTrigger>
-                <AlertDialogContent
-                  forceMount
-                  className="bg-slate-900 border border-slate-700 w-[85%] rounded-md"
-                >
-                  <AlertDialogHeader className="flex flex-col text-white justify-center items-center">
-                    <span>
-                      <Trash size={40} weight="fill" />
-                    </span>
-                    <AlertDialogTitle asChild>
-                      <Typography
-                        description="¿Eliminar cliente?"
-                        fontjura={false}
-                        type="h2"
-                      />
-                    </AlertDialogTitle>
-                    <AlertDialogDescription className="text-white" asChild>
-                      <Typography
-                        description="Esta acción no se puede deshacer"
-                        fontjura={false}
-                        type="p"
-                      />
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel asChild>
-                      <Button variant="secondary">Cancelar</Button>
-                    </AlertDialogCancel>
-                    <AlertDialogAction asChild>
-                      <Button variant="destructive">Eliminar</Button>
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog> */}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <BtnUserActions id={item._id} />
         </div>
       </div>
       <div className="flex justify-between items-center w-full ">
@@ -183,10 +75,6 @@ export default function MobileTableItems({
           {format(item.corte, "MM/dd/yyyy")}
         </Badge>
       </div>
-      {/* <div className="flex flex-col gap-2 p-4">
-                <Button variant="outline">Renovar suscripción</Button>
-                <Link href={`/h/users/user/edit/${_id}`}><Button variant="outline">Editar datos</Button></Link>
-              </div> */}
     </div>
   );
 }
