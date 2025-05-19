@@ -4,7 +4,7 @@ import {
   SelectInput,
   TextInput,
 } from "@/components/inputs";
-import Typography from "@/components/Typography";
+import Typography from "@/components/typography";
 import {
   AlertDialogDescription,
   AlertDialogTrigger,
@@ -15,13 +15,12 @@ import {
   AlertDialogTitle,
   AlertDialog,
   Button,
-  AlertDialogAction,
 } from "@/components/ui";
-import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
-import { FloppyDiskBack } from "@phosphor-icons/react/dist/ssr";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
-export default function UpdateUserLayout() {
+export default function CreateUserLayout() {
   return (
     <div className="flex flex-col gap-4 w-[90%] sm:w-[35%] bg-slate-900 py-6 px-4 rounded-[16px]">
       <TextInput
@@ -61,49 +60,38 @@ export default function UpdateUserLayout() {
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <Button variant="principal" className="">
-            Guardar cambios
+            Registrar
           </Button>
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-slate-900 border border-slate-700 w-[85%] rounded-md">
           <AlertDialogHeader className="flex flex-col text-white justify-center items-center">
             <span>
-              <FloppyDiskBack size={40} weight="fill" />
+              <CheckCircle size={40} weight="fill" />
             </span>
             <AlertDialogTitle asChild>
               <Typography
-                description="¿Guardar cambios?"
+                description="Registro Exitoso"
                 fontjura={false}
                 type="h2"
               />
             </AlertDialogTitle>
             <AlertDialogDescription className="text-white" asChild>
               <Typography
-                description="Los datos no guardados pueden perderse al salir de esta pantalla."
+                description="Se ha procesado el registro del usuario.."
                 fontjura={false}
                 type="p"
               />
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel asChild className="px-0 hover:bg-transparent">
-              {/* <Link
-                href={"/h/users/list"}
-                className="w-full bg-transparent border-none hover:bg-transparent"
-              >
-                
-              </Link> */}
-              <Button variant="outline" className="">
-                Cancelar
-              </Button>
-            </AlertDialogCancel>
-            <AlertDialogAction asChild className="px-0">
+            <AlertDialogCancel asChild className="w-full hover:bg-transparent">
               <Link
                 href={"/h/users/list"}
                 className="w-full bg-transparent border-none hover:bg-transparent"
               >
-                <Button variant="principal">Guardar</Button>
+                <Button variant="principal">Listo</Button>
               </Link>
-            </AlertDialogAction>
+            </AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

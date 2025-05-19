@@ -1,11 +1,11 @@
-import SectionHeader from "@/components/SectionHeader";
-import TableContainer from "@/components/table/TableContainer";
+import ContainerLayout from "@/components/container-layout";
+
+import TableContainer from "@/components/table/table-container";
 
 export default function page() {
   return (
-    <div>
-      <SectionHeader label="clientes" />
+    <ContainerLayout sectionTitle="clientes">
       <TableContainer />
-    </div>
+    </ContainerLayout>
   );
 }

@@ -1,17 +1,15 @@
-import Typography from "@/components/Typography";
-import MobileTableItems from "./MobileTableItems";
-import { invoices } from "@/data/tableData";
+import Typography from "@/components/typography";
+import MobileTableItems from "./mobile-table-item";
+import { users } from "@/seeds/table-data";
 import { Barbell } from "@phosphor-icons/react/dist/ssr";
 
 export default function MobileTable() {
   return (
     <div className="sm:hidden block w-full bg-neutralBlack">
-      {invoices.length > 0 ? (
+      {users.length > 0 ? (
         <ul className="flex flex-col gap-3 w-full">
-          {invoices.map((item, idx: number) => (
-            <li className="w-full" key={item._id}>
-              <MobileTableItems key={item._id} item={item} idx={idx} />
-            </li>
+          {users.map((user, idx: number) => (
+            <MobileTableItems key={user._id} item={user} idx={idx} />
           ))}
         </ul>
       ) : (

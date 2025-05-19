@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-import TextInput from "./TextInput";
+import TextInput from "./text-input";
 
 export default function SearchInput() {
   return (

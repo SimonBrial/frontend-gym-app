@@ -10,8 +10,8 @@ import {
   List,
   X,
 } from "@phosphor-icons/react/dist/ssr";
-import NavItem from "./NavItem";
-import Logo from "../Logo";
+import NavItem from "./nav-item";
+import Logo from "../logo";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
@@ -27,7 +27,7 @@ export default function NavSidebar() {
       icon: <HouseSimple />,
     },
     { label: "Clientes", dir: "/h/users/list", icon: <User /> },
-    { label: "Configuraciones", dir: "/h/settings", icon: <Gear /> },
+    { label: "Ajustes", dir: "/h/settings", icon: <Gear /> },
   ];
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function NavSidebar() {
 
   return (
     <div
-      className={`w-full fixed z-10 sm:h-full sm:relative sm:w-[20%] sm:flex flex-col items-center sm:justify-center py-5 px-2 transition-all duration-500 ease-in-out ${
+      className={`w-full fixed z-10 sm:h-full sm:-relative sm:w-[20%] sm:flex flex-col items-center sm:justify-center py-5 px-2 transition-all duration-500 ease-in-out border-2 border-transparent border-r-slate-800  ${
         show ? "bg-slate-900 h-screen opacity-100" : "bg-slate-900 opacity-100"
       }`}
     >

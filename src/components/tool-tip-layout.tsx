@@ -1,5 +1,5 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 
 export default function ToolTipLayout({
   children,

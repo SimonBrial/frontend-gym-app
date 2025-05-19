@@ -12,6 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         principal: "#ADFF2F",
+        denied: "#EF233C",
         neutralBlack: "#010B13",
         placeholderText: "#94A3B8",
         background: "hsl(var(--background))",

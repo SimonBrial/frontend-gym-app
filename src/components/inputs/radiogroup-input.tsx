@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { Label, RadioGroup, RadioGroupItem } from "../ui";
 import { InputProps } from "@/interface/interfaces";
 

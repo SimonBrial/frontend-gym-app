@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  DotsThreeOutlineVertical,
-  NotePencil,
-  Trash,
-  Note,
-} from "@phosphor-icons/react/dist/ssr";
+import { NotePencil, Trash, Note } from "@phosphor-icons/react/dist/ssr";
 import {
   AlertDialogDescription,
   DropdownMenuSeparator,
@@ -18,63 +13,63 @@ import {
   AlertDialogHeader,
   DropdownMenuGroup,
   AlertDialogTitle,
-  DropdownMenuItem,
   DropdownMenu,
   AlertDialog,
   Button,
+  DropdownMenuItem,
 } from "@/components/ui";
 import Link from "next/link";
-import Typography from "@/components/Typography";
+import Typography from "@/components/typography";
 import { useState } from "react";
 
-export default function BtnUserActions({ id }: { id: string }) {
+export default function BtnActions({
+  titleDescription,
+  iconTrigger,
+  id,
+}: {
+  id: string;
+  titleDescription: string;
+  iconTrigger: React.ReactNode;
+}) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
-          <Button variant={"ghost"} className="px-0.5 text-2xl">
-            <DotsThreeOutlineVertical weight="fill" />
-          </Button>
+        <DropdownMenuTrigger
+          asChild
+          className="hover:cursor-pointer hover:bg-white/20 rounded-md hover:text-lg hover:text-white"
+        >
+          {iconTrigger}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-slate-900 rounded-md text-white border border-slate-800 mr-12">
           <DropdownMenuGroup>
-            <Link href={`/h//users/user/${id}`}>
-              <DropdownMenuItem className="active:bg-principal/50 rounded-md">
+            <Link
+              href={`/h//users/user/${id}`}
+              className="flex gap-2 items-center"
+            >
+              <DropdownMenuItem className="w-full hover:cursor-pointer hover:bg-transparent hover:sm:bg-principal/20 hover:text-principal hover:sm:text-principal text-principal active:text-principal active:bg-principal/20  px-2 py-1 rounded-md ">
                 <Note />
-                <Typography
-                  description="Ver"
-                  fontjura={false}
-                  type="h4"
-                  classes="font-light"
-                />
+                <span>Ver</span>
               </DropdownMenuItem>
             </Link>
-            <Link href={`/h/users/user/edit/${id}`}>
-              <DropdownMenuItem className="active:bg-orange-500/50 rounded-md">
+            <Link
+              href={`/h/users/user/edit/${id}`}
+              className="flex gap-2 items-center"
+            >
+              <DropdownMenuItem className="w-full hover:cursor-pointer hover:bg-transparent hover:sm:bg-orange-500/20 hover:text-orange-500 hover:sm:text-orange-500 text-orange-500 active:text-orange-500 active:bg-orange-500/20  px-2 py-1 rounded-md ">
                 <NotePencil />
-                <Typography
-                  description="Editar"
-                  fontjura={false}
-                  type="h4"
-                  classes="font-light"
-                />
+                <span>Editar</span>
               </DropdownMenuItem>
             </Link>
           </DropdownMenuGroup>
-          <DropdownMenuSeparator className="bg-slate-800" />
+          <DropdownMenuSeparator className="mx-2 bg-slate-600" />
           <DropdownMenuItem
-            className="active:bg-red-500/50"
+            className="hover:cursor-pointer hover:bg-transparent hover:sm:bg-red-500/20 hover:text-red-500 hover:sm:text-red-500 text-red-500 active:text-red-500 active:bg-red-500/20  px-2 py-1 rounded-md "
             onSelect={() => setIsOpen(true)}
           >
             <Trash />
-            <Typography
-              description="Eliminar"
-              fontjura={false}
-              type="h4"
-              classes="font-light"
-            />
+            <span>Eliminar</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -89,7 +84,7 @@ export default function BtnUserActions({ id }: { id: string }) {
             </span>
             <AlertDialogTitle>
               <Typography
-                description="¿Eliminar cliente?"
+                description={titleDescription}
                 fontjura={false}
                 type="p"
               />
@@ -108,11 +103,18 @@ export default function BtnUserActions({ id }: { id: string }) {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel asChild>
-              <Button variant="secondary" onClick={() => setIsOpen(false)} className="bg-slate-700">
+              <Button
+                variant="secondary"
+                onClick={() => setIsOpen(false)}
+                className="bg-slate-700"
+              >
                 Cancelar
               </Button>
             </AlertDialogCancel>
-            <AlertDialogAction asChild className="bg-red-500 active:bg-red-600 hover:bg-red-600">
+            <AlertDialogAction
+              asChild
+              className="bg-red-500 active:bg-red-600 hover:bg-red-600"
+            >
               <Button variant="destructive">Eliminar</Button>
             </AlertDialogAction>
           </AlertDialogFooter>

@@ -1,9 +1,9 @@
-import SectionHeader from "@/components/SectionHeader";
+import ContainerLayout from "@/components/container-layout";
 
 export default function page() {
   return (
-    <div className="">
-      <SectionHeader label="configuraciones" />
-    </div>
+    <ContainerLayout sectionTitle="ajustes">
+      <div className="w-full h-full px-4">Ajustes</div>
+    </ContainerLayout>
   );
 }

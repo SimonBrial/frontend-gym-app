@@ -16,13 +16,36 @@ interface TypographyProps {
 }
 
 interface TableData {
-  cedula: number | string;
-  status: string;
-  nombre: string;
-  corte: Date;
-  tipo: string;
   _id: string;
-  acciones: string;
+  nombre: string;
+  apellido: string;
+  cedula: string;
+  edad: number;
+  peso: number;
+  fechaRegistro: string;
+  ultimoPago: string;
+  diasEnMora: string;
+  trainer: string;
+  ultimaActualizacion: string;
+  // acciones: string;
+}
+
+interface InvoiceTableProps {
+  _id: string;
+  mes: string;
+  numero: string;
+  tipo: string;
+  status: string;
+  corte: Date;
+  // acciones: string;
+}
+
+interface TableHeaderDBProps {
+  dataArr: TableData[] | InvoiceTableProps[];
+}
+
+interface TableItemsProps {
+  dataArr: TableData[] | InvoiceTableProps[];
 }
 
 interface NavItemProps {
@@ -37,6 +60,9 @@ interface InputProps {
 }
 
 export type {
+  TableHeaderDBProps,
+  InvoiceTableProps,
+  TableItemsProps,
   TypographyProps,
   NavItemProps,
   NavSections,

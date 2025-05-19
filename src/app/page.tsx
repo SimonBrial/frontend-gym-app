@@ -1,9 +1,9 @@
 import imgBgDesktop from "../../public/img/login-background.jpg";
 import imgBgMobile from "../../public/img/bg-login-mobile.jpg";
-import LoginForm from "./h/layout/LoginForm";
+import LoginForm from "./h/layout/login-form";
 import Image from "next/image";
-import Logo from "@/components/Logo";
-import Typography from "@/components/Typography";
+import Logo from "@/components/logo";
+import Typography from "@/components/typography";
 
 export default function Login() {
   return (

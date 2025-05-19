@@ -1,4 +1,4 @@
-import TableContainer from "@/components/table/TableContainer";
+import TableContainer from "@/components/table/table-container";
 
 
 export default function page() {

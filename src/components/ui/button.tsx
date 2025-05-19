@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-transparent w-full px-0 text-primary-foreground hover:bg-primary/90",
+        default:
+          "bg-transparent w-full px-0 text-primary-foreground hover:bg-primary/90 ",
         destructive:
           "bg-red-500 text-white active:bg-red-500/90 hover:bg-red-500/90 w-full",
         outline:
           "border border-white bg- sm-hover:bg-white/50 active:bg-white/50 text-white w-full",
-        secondary:
-          "text-white bg-red-700 hover:bg-slate-700/80 border-none",
+        secondary: "text-white bg-red-700 hover:bg-slate-700/80 border-none",
         ghost: "hover:bg-transparent hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
         principal:
@@ -28,7 +28,7 @@ const buttonVariants = cva(
           "text-principal flex gap-1 hover:bg-principal/10 transition-all hover:cursor-pointer",
         userAction:
           "text-white bg-slate-800 text-lg sm-hover:text-principal active:text-principal transition-all",
-        registerNav: "rounded-full border border-red-500 w-full"
+        registerNav: "rounded-full border border-red-500 w-full text",
       },
       size: {
         default: "h-10 px-4 py-2",
