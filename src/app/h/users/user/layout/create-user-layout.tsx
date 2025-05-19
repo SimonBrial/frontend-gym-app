@@ -4,7 +4,7 @@ import {
   SelectInput,
   TextInput,
 } from "@/components/inputs";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import {
   AlertDialogDescription,
   AlertDialogTrigger,
@@ -69,14 +69,14 @@ export default function CreateUserLayout() {
               <CheckCircle size={40} weight="fill" />
             </span>
             <AlertDialogTitle asChild>
-              <Typography
+              <TypographyText
                 description="Registro Exitoso"
                 fontjura={false}
                 type="h2"
               />
             </AlertDialogTitle>
             <AlertDialogDescription className="text-white" asChild>
-              <Typography
+              <TypographyText
                 description="Se ha procesado el registro del usuario.."
                 fontjura={false}
                 type="p"

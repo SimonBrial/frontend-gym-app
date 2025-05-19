@@ -1,6 +1,6 @@
 import { Barbell } from "@phosphor-icons/react/dist/ssr";
 import React from "react";
-import Typography from "./typography";
+import TypographyText from "./typography-text";
 
 export default function StatusBadge({statusValue}: {statusValue: string}) {
   return (
@@ -8,7 +8,7 @@ export default function StatusBadge({statusValue}: {statusValue: string}) {
       <span className="h-[30px] w-[30px] -mb-1 text-principal">
         <Barbell size={25} />
       </span>
-      <Typography
+      <TypographyText
         description={statusValue}
         classes="text-base"
         fontjura={false}

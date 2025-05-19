@@ -1,7 +1,7 @@
 import { NavItemProps } from "@/interface/interfaces";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import Typography from "../typography";
+import TypographyText from "../typography-text";
 
 export default function NavItem({ item, fnCloseMenu, active }: NavItemProps) {
   return (
@@ -15,7 +15,7 @@ export default function NavItem({ item, fnCloseMenu, active }: NavItemProps) {
         <span className="text-lg text-white  group-hover:text-principal group-hover:cursor-pointer">
           {item.icon}
         </span>{" "}
-        <Typography
+        <TypographyText
           type="p"
           description={item.label}
           fontjura={false}

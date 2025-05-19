@@ -2,8 +2,8 @@ import imgBgDesktop from "../../public/img/login-background.jpg";
 import imgBgMobile from "../../public/img/bg-login-mobile.jpg";
 import LoginForm from "./h/layout/login-form";
 import Image from "next/image";
-import Logo from "@/components/logo";
-import Typography from "@/components/typography";
+import Logo from "@/components/logo-app";
+import TypographyText from "@/components/typography-text";
 
 export default function Login() {
   return (
@@ -25,7 +25,7 @@ export default function Login() {
       <div className="flex flex-col justify-between items-center w-full sm:w-1/4 bg-transparent sm:bg-neutralBlack p-6">
         <Logo />
         <LoginForm />
-        <Typography
+        <TypographyText
           type="p"
           description={"2024 @ Contactar soporte"}
           fontjura={false}

@@ -1,4 +1,4 @@
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import { TableData } from "@/interface/interfaces";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 
@@ -24,13 +24,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
             className="p-6 justify-center items-center border-b border-slate-800 last:border-b-0"
           >
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("nombre")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter(nombre)}
                 fontjura={false}
                 type="p"
@@ -38,13 +38,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("apellido")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={apellido}
                 fontjura={false}
                 type="p"
@@ -52,13 +52,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("cedula")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={cedula}
                 fontjura={false}
                 type="p"
@@ -66,13 +66,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("edad")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={edad.toString()}
                 fontjura={false}
                 type="p"
@@ -80,13 +80,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("peso")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={`${peso} Kg`}
                 fontjura={false}
                 type="p"
@@ -94,13 +94,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("registro")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={fechaRegistro}
                 fontjura={false}
                 type="p"
@@ -108,13 +108,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("ultimo pago")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={ultimoPago}
                 fontjura={false}
                 type="p"
@@ -122,13 +122,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("dias morando")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={diasEnMora}
                 fontjura={false}
                 type="p"
@@ -136,13 +136,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("trainer")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={trainer}
                 fontjura={false}
                 type="p"
@@ -150,13 +150,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
               />
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 w-full ">
-              <Typography
+              <TypographyText
                 description={capitalizeFirstLetter("ultima actualizacion")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
-              <Typography
+              <TypographyText
                 description={ultimaActualizacion}
                 fontjura={false}
                 type="p"

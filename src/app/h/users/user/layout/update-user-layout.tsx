@@ -4,7 +4,7 @@ import {
   SelectInput,
   TextInput,
 } from "@/components/inputs";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import {
   AlertDialogDescription,
   AlertDialogTrigger,
@@ -70,14 +70,14 @@ export default function UpdateUserLayout() {
               <FloppyDiskBack size={40} weight="fill" />
             </span>
             <AlertDialogTitle asChild>
-              <Typography
+              <TypographyText
                 description="¿Guardar cambios?"
                 fontjura={false}
                 type="h2"
               />
             </AlertDialogTitle>
             <AlertDialogDescription className="text-white" asChild>
-              <Typography
+              <TypographyText
                 description="Los datos no guardados pueden perderse al salir de esta pantalla."
                 fontjura={false}
                 type="p"

@@ -1,7 +1,7 @@
 "use client";
 
 import DesktopInvoicesTable from "@/components/table/desktop/desktop-invoices-table";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import {
   AlertDialogDescription,
   AlertDialogContent,
@@ -68,7 +68,7 @@ export default function ReadUserLayout() {
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <Typography
+            <TypographyText
               description={capitalizeFirstLetter("edgardo marcano")}
               fontjura={false}
               type="h2"
@@ -78,7 +78,7 @@ export default function ReadUserLayout() {
               <span className="h-[30px] w-[30px] -mb-1 text-principal">
                 <Barbell size={25} />
               </span>
-              <Typography
+              <TypographyText
                 description={"Solvente"}
                 classes="text-base"
                 fontjura={false}
@@ -120,7 +120,7 @@ export default function ReadUserLayout() {
               <Trash size={40} weight="fill" />
             </span>
             <AlertDialogTitle>
-              <Typography
+              <TypographyText
                 description="¿Eliminar cliente?"
                 fontjura={false}
                 type="p"
@@ -131,7 +131,7 @@ export default function ReadUserLayout() {
               className="text-white"
               asChild
             >
-              <Typography
+              <TypographyText
                 description="Esta acción no se puede deshacer"
                 fontjura={false}
                 type="p"
@@ -167,13 +167,13 @@ export default function ReadUserLayout() {
 
 {
   /* <li className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
-              <Typography
+              <TypographyText
                 description="Cedula"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold -mx-2"
               />{" "}
-              <Typography
+              <TypographyText
                 description="25317338"
                 fontjura={false}
                 type="p"
@@ -181,13 +181,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
-              <Typography
+              <TypographyText
                 description="Cedula"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold -mx-2"
               />{" "}
-              <Typography
+              <TypographyText
                 description="25317338"
                 fontjura={false}
                 type="p"
@@ -195,13 +195,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Nombre"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="Edgardo"
                 fontjura={false}
                 type="p"
@@ -209,13 +209,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Apellido"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="Marcano"
                 fontjura={false}
                 type="p"
@@ -223,13 +223,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Edad"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="22"
                 fontjura={false}
                 type="p"
@@ -237,13 +237,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Peso"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="70 Kg"
                 fontjura={false}
                 type="p"
@@ -251,13 +251,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Fecha registro"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="20/10/2024"
                 fontjura={false}
                 type="p"
@@ -265,13 +265,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Último pago"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="20/11/2024"
                 fontjura={false}
                 type="p"
@@ -279,13 +279,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Días en mora"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="14 días"
                 fontjura={false}
                 type="p"
@@ -293,13 +293,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Traineer"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description="Juan Perez"
                 fontjura={false}
                 type="p"
@@ -307,13 +307,13 @@ export default function ReadUserLayout() {
               />
             </li>
             <li className="grid grid-cols-2 px-4 py-2">
-              <Typography
+              <TypographyText
                 description="Última actualización"
                 fontjura={false}
                 type="p"
                 classes="text-base font-bold"
               />{" "}
-              <Typography
+              <TypographyText
                 description={"27/11/2024 17:56"}
                 fontjura={false}
                 type="p"

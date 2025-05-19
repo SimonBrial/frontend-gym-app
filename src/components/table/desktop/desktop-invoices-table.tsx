@@ -87,14 +87,14 @@ export default function DesktopInvoicesTable(/* {
                           <Trash size={40} weight="fill" />
                         </span>
                         <AlertDialogTitle asChild>
-                          <Typography
+                          <TypographyText
                             description="¿Eliminar factura?"
                             fontjura={false}
                             type="h2"
                           />
                         </AlertDialogTitle>
                         <AlertDialogDescription className="text-white" asChild>
-                          <Typography
+                          <TypographyText
                             description="Esta acción no se puede deshacer"
                             fontjura={false}
                             type="p"

@@ -112,14 +112,14 @@ export default function DesktopTableItems({
                         <Trash size={40} weight="fill" />
                       </span>
                       <DialogTitle asChild>
-                        <Typography
+                        <TypographyText
                           description="¿Eliminar cliente?"
                           fontjura={false}
                           type="h2"
                         />
                       </DialogTitle>
                       <DialogDescription className="text-white" asChild>
-                        <Typography
+                        <TypographyText
                           description="Esta acción no se puede deshacer"
                           fontjura={false}
                           type="p"
@@ -195,14 +195,14 @@ export default function DesktopTableItems({
         <Trash size={40} weight="fill" />
       </span>
       <AlertDialogTitle asChild>
-        <Typography
+        <TypographyText
           description="¿Eliminar cliente?"
           fontjura={false}
           type="h2"
         />
       </AlertDialogTitle>
       <AlertDialogDescription className="text-white" asChild>
-        <Typography
+        <TypographyText
           description="Esta acción no se puede deshacer"
           fontjura={false}
           type="p"

@@ -3,7 +3,7 @@ import { Jura } from "next/font/google";
 
 const jura = Jura({ subsets: ["latin"] });
 
-export default function Typography({
+export default function TypographyText({
   fontjura = false,
   description,
   underscore,

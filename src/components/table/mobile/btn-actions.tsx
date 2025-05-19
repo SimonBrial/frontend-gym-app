@@ -19,7 +19,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui";
 import Link from "next/link";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import { useState } from "react";
 
 export default function BtnActions({
@@ -83,7 +83,7 @@ export default function BtnActions({
               <Trash size={40} weight="fill" />
             </span>
             <AlertDialogTitle>
-              <Typography
+              <TypographyText
                 description={titleDescription}
                 fontjura={false}
                 type="p"
@@ -94,7 +94,7 @@ export default function BtnActions({
               className="text-white"
               asChild
             >
-              <Typography
+              <TypographyText
                 description="Esta acción no se puede deshacer"
                 fontjura={false}
                 type="p"

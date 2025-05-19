@@ -10,7 +10,7 @@ import {
 import { users } from "@/seeds/table-data";
 import TableHeaderDB from "../table-header-db";
 import DesktopTableItems from "./desktop-table-items";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 
 
 export default function DesktopTable() {
@@ -39,7 +39,7 @@ export default function DesktopTable() {
           </TableRow>
         </TableFooter>
       </Table>
-      <Typography
+      <TypographyText
         description="A list of your recent invoices."
         fontjura={false}
         type="p"

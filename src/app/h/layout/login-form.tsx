@@ -1,5 +1,5 @@
 import TextInput from "@/components/inputs/text-input";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,7 +8,7 @@ export default function LoginForm() {
   return (
     <div className="flex flex-col gap-[24px] p-6 w-full">
       <div className="border-2 border-slate-800 bg-slate-900 rounded-[16px] p-[16px] flex flex-col items-center gap-[16px]">
-        <Typography
+        <TypographyText
           type="h4"
           description={"Bienvenido"}
           fontjura={false}

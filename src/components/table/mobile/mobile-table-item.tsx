@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { TableData } from "@/interface/interfaces";
-import Typography from "@/components/typography";
+import TypographyText from "@/components/typography-text";
 import { AvatarFallback, AvatarImage, Avatar, Badge } from "@/components/ui";
 import BtnActions from "./btn-actions";
 import UserStatusBadge from "@/components/user-status-badge";
@@ -30,13 +30,13 @@ export default function MobileTableItem({
         </div>
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("nombre")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter(item.nombre)}
           fontjura={false}
           type="p"
@@ -44,13 +44,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("apellido")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.apellido}
           fontjura={false}
           type="p"
@@ -58,13 +58,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("cedula")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.cedula}
           fontjura={false}
           type="p"
@@ -72,13 +72,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("peso")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={`${item.peso} Kg`}
           fontjura={false}
           type="p"
@@ -86,13 +86,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("registro")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.fechaRegistro}
           fontjura={false}
           type="p"
@@ -100,13 +100,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("ultimo pago")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.ultimaActualizacion}
           fontjura={false}
           type="p"
@@ -114,13 +114,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("dias morando")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.diasEnMora}
           fontjura={false}
           type="p"
@@ -128,13 +128,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("trainer")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.trainer ? item.trainer : "No asignado"}
           fontjura={false}
           type="p"
@@ -142,13 +142,13 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center border border-transparent border-b-slate-800 w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("ultima actualizacion")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
         />
-        <Typography
+        <TypographyText
           description={item.ultimaActualizacion}
           fontjura={false}
           type="p"
@@ -156,7 +156,7 @@ export default function MobileTableItem({
         />
       </div>
       <div className="grid grid-cols-2 justify-center items-center w-full ">
-        <Typography
+        <TypographyText
           description={capitalizeFirstLetter("vencimiento")}
           fontjura={false}
           type="h3"

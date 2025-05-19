@@ -11,7 +11,7 @@ import {
   X,
 } from "@phosphor-icons/react/dist/ssr";
 import NavItem from "./nav-item";
-import Logo from "../logo";
+import Logo from "../logo-app";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
