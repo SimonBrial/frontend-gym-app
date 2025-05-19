@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import ReadUserLayout from "../layout/read-user-layout";
-import InvoicesLayout from "../layout/InvoicesLayout";
+import InvoicesLayout from "../layout/Invoices-layout";
 import ContainerLayout from "@/components/container-layout";
 
 export default function page() {

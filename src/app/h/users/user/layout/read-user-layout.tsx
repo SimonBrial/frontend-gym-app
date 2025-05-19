@@ -1,6 +1,6 @@
 "use client";
 
-import DesktopInvoicesTable from "@/components/table/desktop/DesktopInvoicesTable";
+import DesktopInvoicesTable from "@/components/table/desktop/desktop-invoices-table";
 import Typography from "@/components/typography";
 import {
   AlertDialogDescription,
