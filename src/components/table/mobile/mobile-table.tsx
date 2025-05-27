@@ -1,9 +1,19 @@
+"use client";
+
 import TypographyText from "@/components/typography-text";
 import MobileTableItems from "./mobile-table-item";
-import { users } from "@/seeds/table-data";
 import { Barbell } from "@phosphor-icons/react/dist/ssr";
+import { useUserStore } from "@/store/user-store.store";
+import { useEffect } from "react";
 
 export default function MobileTable() {
+  const getUsers = useUserStore((state) => state.fnGetUsers);
+  const users = useUserStore((state) => state.usersResponse.data);
+
+  useEffect(() => {
+      getUsers(true); // Ejecuta la función al montar el componente
+  }, []);
+  
   return (
     <div className="sm:hidden block w-full bg-neutralBlack">
       {users.length > 0 ? (

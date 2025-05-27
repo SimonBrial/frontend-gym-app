@@ -13,25 +13,27 @@ import {
   AlertDialogHeader,
   DropdownMenuGroup,
   AlertDialogTitle,
+  DropdownMenuItem,
   DropdownMenu,
   AlertDialog,
   Button,
-  DropdownMenuItem,
 } from "@/components/ui";
 import Link from "next/link";
 import TypographyText from "@/components/typography-text";
 import { useState } from "react";
+import { useUserStore } from "@/store/user-store.store";
 
 export default function BtnActions({
   titleDescription,
   iconTrigger,
   id,
 }: {
-  id: string;
+  id: number;
   titleDescription: string;
   iconTrigger: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const fnDeleteUser = useUserStore((state) => state.fnDeleteUser);
 
   return (
     <>
@@ -115,7 +117,9 @@ export default function BtnActions({
               asChild
               className="bg-red-500 active:bg-red-600 hover:bg-red-600"
             >
-              <Button variant="destructive">Eliminar</Button>
+              <Button variant="destructive" onClick={() => fnDeleteUser(id)}>
+                Eliminar
+              </Button>
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

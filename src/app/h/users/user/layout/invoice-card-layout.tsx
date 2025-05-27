@@ -7,8 +7,8 @@ import React from "react";
 
 export default function InvoiceCardLayout({ inv }: { inv: InvoiceTableProps }) {
   return (
-    <div className="w-full py-2 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-start gap-2 px-3 text-center">
-      <div className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
+    <div className="w-full py-3 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-start gap-2 px-3 text-center">
+      <div className="grid grid-cols-2 px-4 py-1 border-b border-slate-800 mx-2">
         <TypographyText
           description={capitalizeFirstLetter("mes")}
           fontjura={false}
@@ -22,7 +22,7 @@ export default function InvoiceCardLayout({ inv }: { inv: InvoiceTableProps }) {
           classes="text-base text-start pl-1"
         />
       </div>
-      <div className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
+      <div className="grid grid-cols-2 px-4 py-1 border-b border-slate-800 mx-2">
         <TypographyText
           description={capitalizeFirstLetter("numero")}
           fontjura={false}
@@ -36,7 +36,7 @@ export default function InvoiceCardLayout({ inv }: { inv: InvoiceTableProps }) {
           classes="text-base text-start pl-1"
         />
       </div>
-      <div className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
+      <div className="grid grid-cols-2 px-4 py-1 border-b border-slate-800 mx-2">
         <TypographyText
           description={capitalizeFirstLetter("tipo")}
           fontjura={false}
@@ -50,7 +50,7 @@ export default function InvoiceCardLayout({ inv }: { inv: InvoiceTableProps }) {
           classes="text-base text-start pl-1"
         />
       </div>
-      <div className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
+      <div className="grid grid-cols-2 px-4 py-1 border-b border-slate-800 mx-2">
         <TypographyText
           description={capitalizeFirstLetter("status")}
           fontjura={false}
@@ -68,7 +68,7 @@ export default function InvoiceCardLayout({ inv }: { inv: InvoiceTableProps }) {
           {inv.status}
         </Badge>
       </div>
-      <div className="grid grid-cols-2 px-4 py-2 border-b border-slate-800 mx-2">
+      <div className="grid grid-cols-2 px-4 py-2  mx-2">
         <TypographyText
           description={capitalizeFirstLetter("corte")}
           fontjura={false}

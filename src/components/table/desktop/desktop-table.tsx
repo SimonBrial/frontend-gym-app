@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+"use client";
+
 import {
   // TableCaption,
   TableFooter,
@@ -7,45 +10,72 @@ import {
   TableRow,
   Table,
 } from "@/components/ui/table";
-import { users } from "@/seeds/table-data";
-import TableHeaderDB from "../table-header-db";
-import DesktopTableItems from "./desktop-table-items";
 import TypographyText from "@/components/typography-text";
-
+import { useUserStore } from "@/store/user-store.store";
+import { useEffect } from "react";
+import UserTableHeader from "./users/user-table-header";
+import UserTableBody from "./users/user-table-body";
+// import { usePathname } from "next/navigation";
 
 export default function DesktopTable() {
+  //const path = usePathname();
+  const getUsers = useUserStore((state) => state.fnGetUsers);
+  const users = useUserStore((state) => state.usersResponse.data);
+  /* const createUser = useUserStore((state) => state.fnCreateUser); */
+  // console.log(users);
+
+  useEffect(() => {
+    /*  if (users.length === 0 ) {
+    } */
+    getUsers();
+  }, [users]);
+
   return (
     <>
-      <Table className="w-full p-6 bg-slate-900 rounded-lg">
-        {/* <TableCaption className="text-principal">
-          A list of your recent invoices.
-        </TableCaption> */}
-        <TableHeader className="group">
-          <TableRow>
-            <TableHeaderDB dataArr={users} />
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-            <DesktopTableItems dataArr={users} />
-        </TableBody>
-        <TableFooter className="rounded-b-lg">
-          <TableRow className="bg-slate-900">
-            <TableCell colSpan={6} className="rounded-bl-lg">
-              Total
-            </TableCell>
-            <TableCell colSpan={1} className="text-right rounded-br-lg">
-              {users.length}
-            </TableCell>
-          </TableRow>
-        </TableFooter>
-      </Table>
-      <TypographyText
-        description="A list of your recent invoices."
-        fontjura={false}
-        type="p"
-        color="text-principal"
-        classes="text-center text-sm sm:text-base mt-4 hidden sm:block"
-      />
+      {users.length > 0 ? (
+        <>
+          <Table className="w-full p-6 bg-slate-900 rounded-lg">
+            <TableHeader className="group">
+              <UserTableHeader />
+            </TableHeader>
+            <TableBody>
+              <UserTableBody dataArr={users} />
+            </TableBody>
+            <TableFooter className="rounded-b-lg">
+              <TableRow className="bg-slate-900">
+                <TableCell
+                  colSpan={2}
+                  className="rounded-bl-lg flex items-center gap-2"
+                >
+                  <TypographyText
+                    description={`Total: ${users.length}`}
+                    classes="text-principal"
+                    fontjura
+                    type="p"
+                  />
+                </TableCell>
+              </TableRow>
+            </TableFooter>
+          </Table>
+          <TypographyText
+            description="A list of your recent invoices."
+            fontjura={false}
+            type="p"
+            color="text-principal"
+            classes="text-center text-sm sm:text-base mt-4 hidden sm:block"
+          />
+        </>
+      ) : (
+        <div className="border border-slate-600 w-full p-6 bg-slate-900 rounded-lg">
+          <TypographyText
+            description="Tabla vacia, no hay registros para mostrar."
+            fontjura
+            type="p"
+            color="text-principal"
+            classes="text-center text-lg hidden sm:block"
+          />
+        </div>
+      )}
     </>
   );
 }

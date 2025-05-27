@@ -1,6 +1,6 @@
 import SearchInput from "@/components/inputs/search-input";
 import DesktopTable from "./desktop/desktop-table";
-import MobileTable from "./mobile/MobileTable";
+import MobileTable from "./mobile/mobile-table";
 
 export default function TableContainer() {
   return (

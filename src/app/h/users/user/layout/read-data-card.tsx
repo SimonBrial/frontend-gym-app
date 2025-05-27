@@ -1,8 +1,9 @@
 import TypographyText from "@/components/typography-text";
-import { TableData } from "@/interface/interfaces";
+import { UserBody } from "@/interface/interfaces";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
+import { format } from "date-fns";
 
-export default function ReadDataCard({ data }: { data: TableData[] }) {
+export default function ReadDataCard({ data }: { data: UserBody[] }) {
   return (
     <ul className="w-full">
       {data.map((item, index) => {
@@ -101,7 +102,7 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={fechaRegistro}
+                description={format(fechaRegistro, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -115,7 +116,7 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={ultimoPago}
+                description={format(ultimoPago, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -123,13 +124,13 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
             </div>
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
               <TypographyText
-                description={capitalizeFirstLetter("dias morando")}
+                description={capitalizeFirstLetter("dias en mora")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={diasEnMora}
+                description={`${diasEnMora} días`}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -157,7 +158,7 @@ export default function ReadDataCard({ data }: { data: TableData[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={ultimaActualizacion}
+                description={format(ultimaActualizacion, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"

@@ -10,7 +10,7 @@ export default function ContainerLayout({
   return (
     <div className="w-full h-full bg-neutralBlack">
       <SectionHeader label={sectionTitle} />
-      <div className="w-full h-screen flex justify-start items-start pt-4 sm:pt-[4.5rem]">
+      <div className="w-full h-full pb-4 sm:pb-0 sm:h-screen flex justify-start items-start pt-4 sm:pt-[4.5rem]">
         {children}
       </div>
     </div>

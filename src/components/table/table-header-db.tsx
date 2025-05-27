@@ -1,20 +1,21 @@
-import { TableHeaderDBProps } from "@/interface/interfaces";
-import { TableHead } from "../ui/table";
-import { separatesWords } from "@/utils/sepparate-words";
+import { TableHead, TableRow } from "../ui/table";
 
-export default function TableHeaderDB({ dataArr }: TableHeaderDBProps) {
-  const keys = dataArr.length > 0 ? Object.keys(dataArr[0]) : [];
-
-  return keys.map((item, idx) => (
-    <TableHead
-      key={idx}
-      className={`last:w-[17%] text-white group-hover:text-principal font-bold first:rounded-tl-lg last:rounded-tr-lg ${
-        separatesWords(item) === "acciones"
-          ? "text-center w-full"
-          : "text-start"
-      }`}
-    >
-      {separatesWords(item) === "_id" ? "ID" : separatesWords(item)}
-    </TableHead>
-  ));
+export default function TableHeaderDB() {
+  const classHead =
+    "last:w-[17%] text-white group-hover:text-principal font-bold first:rounded-tl-lg last:rounded-tr-lg text-center w-full";
+  return (
+    <TableRow>
+      <TableHead className={classHead}>ID</TableHead>
+      <TableHead className={classHead}>Nombre</TableHead>
+      <TableHead className={classHead}>Apellido</TableHead>
+      <TableHead className={classHead}>Cedula</TableHead>
+      <TableHead className={classHead}>Edad</TableHead>
+      <TableHead className={classHead}>Peso</TableHead>
+      <TableHead className={classHead}>Fecha de Registro</TableHead>
+      <TableHead className={classHead}>Ultimo Pago</TableHead>
+      <TableHead className={classHead}>Dias en Mora</TableHead>
+      <TableHead className={classHead}>Trainer</TableHead>
+      <TableHead className={classHead}>Ultima Actualizacion</TableHead>
+    </TableRow>
+  );
 }

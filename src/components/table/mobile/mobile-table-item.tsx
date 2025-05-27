@@ -1,16 +1,17 @@
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
-import { TableData } from "@/interface/interfaces";
+import { UserBody } from "@/interface/interfaces";
 import TypographyText from "@/components/typography-text";
 import { AvatarFallback, AvatarImage, Avatar, Badge } from "@/components/ui";
-import BtnActions from "./btn-actions";
+import BtnActions from "../../buttons/btn-actions";
 import UserStatusBadge from "@/components/user-status-badge";
 import { DotsThreeVertical } from "@phosphor-icons/react/dist/ssr";
+import { format } from "date-fns";
 
 export default function MobileTableItem({
   item,
   idx,
 }: {
-  item: TableData;
+  item: UserBody;
   idx: number;
 }) {
   return (
@@ -93,7 +94,7 @@ export default function MobileTableItem({
           classes="text-base pl-2"
         />
         <TypographyText
-          description={item.fechaRegistro}
+          description={format(item.fechaRegistro, "MM/dd/yyyy")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
@@ -107,7 +108,7 @@ export default function MobileTableItem({
           classes="text-base pl-2"
         />
         <TypographyText
-          description={item.ultimaActualizacion}
+          description={format(item.ultimaActualizacion, "MM/dd/yyyy")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
@@ -121,7 +122,7 @@ export default function MobileTableItem({
           classes="text-base pl-2"
         />
         <TypographyText
-          description={item.diasEnMora}
+          description={`${item.diasEnMora} días`}
           fontjura={false}
           type="p"
           classes="text-base pl-2"
@@ -149,7 +150,7 @@ export default function MobileTableItem({
           classes="text-base pl-2"
         />
         <TypographyText
-          description={item.ultimaActualizacion}
+          description={format(item.ultimaActualizacion, "MM/dd/yyyy")}
           fontjura={false}
           type="p"
           classes="text-base pl-2"

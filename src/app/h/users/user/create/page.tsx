@@ -4,7 +4,7 @@ import ContainerLayout from "@/components/container-layout";
 export default function page() {
   return (
     <ContainerLayout sectionTitle="registrar cliente">
-      <div className="flex justify-center items-start pt-6 sm:pt-0 sm:items-center w-full h-full">
+      <div className="flex justify-center items-start pt-4 sm:pt-0 sm:items-center w-full sm:h-full">
         <CreateUserLayout />
       </div>
     </ContainerLayout>

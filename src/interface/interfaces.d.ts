@@ -1,4 +1,4 @@
-import { TypeTitle } from "../types/types";
+import { TypeTitle, dniCodeType, planType, sexType } from "../types/types";
 
 interface NavSections {
   label: string;
@@ -15,23 +15,23 @@ interface TypographyProps {
   type: TypeTitle;
 }
 
-interface TableData {
-  _id: string;
+interface UserBody {
+  _id: number;
   nombre: string;
   apellido: string;
   cedula: string;
   edad: number;
   peso: number;
-  fechaRegistro: string;
-  ultimoPago: string;
-  diasEnMora: string;
+  fechaRegistro: Date;
+  ultimoPago: Date;
+  diasEnMora: number;
   trainer: string;
-  ultimaActualizacion: string;
+  ultimaActualizacion: Date;
   // acciones: string;
 }
 
 interface InvoiceTableProps {
-  _id: string;
+  _id: number;
   mes: string;
   numero: string;
   tipo: string;
@@ -41,11 +41,11 @@ interface InvoiceTableProps {
 }
 
 interface TableHeaderDBProps {
-  dataArr: TableData[] | InvoiceTableProps[];
+  dataArr: UserBody[] | InvoiceTableProps[];
 }
 
 interface TableItemsProps {
-  dataArr: TableData[] | InvoiceTableProps[];
+  dataArr: UserBody[] | InvoiceTableProps[];
 }
 
 interface NavItemProps {
@@ -57,6 +57,23 @@ interface NavItemProps {
 interface InputProps {
   [x: string]: any;
   classNameContainer: string;
+  inputName: string;
+  inputType: string;
+  description: string;
+  control: any;
+}
+
+interface UserProps {
+  plan: planType;
+  sexo: sexType;
+  dniCode: dniCodeType;
+  nombre: string;
+  apellido: string;
+  cedula: string;
+  peso: number | undefined;
+  edad: number | undefined;
+  nombreTrainer: string;
+  apellidoTrainer: string;
 }
 
 export type {
@@ -67,5 +84,6 @@ export type {
   NavItemProps,
   NavSections,
   InputProps,
-  TableData,
+  UserProps,
+  UserBody,
 };

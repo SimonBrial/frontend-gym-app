@@ -12,7 +12,7 @@ import { InvoiceTableProps } from "@/interface/interfaces";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { DotsThree } from "@phosphor-icons/react/dist/ssr";
 import { format } from "date-fns";
-import BtnActions from "../mobile/btn-actions";
+import BtnActions from "../../buttons/btn-actions";
 
 export default function DesktopInvoicesTable(/* {
   invoicesArray,

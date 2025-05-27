@@ -5,7 +5,7 @@ import ContainerLayout from "@/components/container-layout";
 
 export default function page() {
   return (
-    <ContainerLayout sectionTitle="Perfil del cliente">
+    <ContainerLayout sectionTitle="Perfil">
       {/* <div className="flex gap-1 justify-center items-center">
         <Button variant="registerNav">Perfil cliente</Button>
         <Button variant="registerNav">Recibos</Button>
@@ -19,14 +19,14 @@ export default function page() {
           <TabsTrigger value="profile" className="text-slate-700 rounded-full">
             Perfil cliente
           </TabsTrigger>
-          <TabsTrigger value="receipts" className="text-slate-700 rounded-full">
+          <TabsTrigger value="invoices" className="text-slate-700 rounded-full">
             Recibos
           </TabsTrigger>
         </TabsList>
         <TabsContent value="profile" className="w-full sm:w--1/3">
           <ReadUserLayout />
         </TabsContent>
-        <TabsContent value="receipts">
+        <TabsContent value="invoices">
           <InvoicesLayout />
         </TabsContent>
       </Tabs>

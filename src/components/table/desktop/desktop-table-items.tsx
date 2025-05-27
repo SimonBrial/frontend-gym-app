@@ -1,15 +1,16 @@
 import { TableCell, TableRow } from "@/components/ui/table";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
-import { TableData } from "@/interface/interfaces";
+import { UserBody } from "@/interface/interfaces";
 import { DotsThree } from "@phosphor-icons/react/dist/ssr";
-import BtnActions from "../mobile/btn-actions";
+import BtnActions from "../../buttons/btn-actions";
+import { format } from "date-fns";
 
 export default function DesktopTableItems({
   dataArr,
 }: {
-  dataArr: TableData[];
+  dataArr: UserBody[];
 }) {
-  return dataArr.map((inv: TableData, idx) => {
+  return dataArr.map((inv: UserBody) => {
     const {
       ultimaActualizacion,
       fechaRegistro,
@@ -29,7 +30,7 @@ export default function DesktopTableItems({
     }
     return (
       <TableRow key={_id}>
-        <TableCell>{idx + 1}</TableCell>
+        <TableCell>{_id}</TableCell>
         <TableCell className="font-medium">
           {capitalizeFirstLetter(nombre)}
         </TableCell>
@@ -39,11 +40,15 @@ export default function DesktopTableItems({
         <TableCell>{cedula}</TableCell>
         <TableCell>{edad}</TableCell>
         <TableCell>{peso}</TableCell>
-        <TableCell className="">{fechaRegistro}</TableCell>
-        <TableCell className="">{ultimaActualizacion}</TableCell>
+        <TableCell className="">
+          {format(fechaRegistro, "MM/dd/yyyy")}
+        </TableCell>
+        <TableCell className="">
+          {format(ultimaActualizacion, "MM/dd/yyyy")}
+        </TableCell>
         <TableCell>{diasEnMora}</TableCell>
         <TableCell>{capitalizeFirstLetter(trainer)}</TableCell>
-        <TableCell className="">{ultimoPago}</TableCell>
+        <TableCell className="">{format(ultimoPago, "MM/dd/yyyy")}</TableCell>
         <TableCell className="flex gap-2.5">
           <BtnActions
             iconTrigger={<DotsThree size={32} />}

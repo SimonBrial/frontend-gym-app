@@ -27,7 +27,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 
-const initialValues: UserProps = {
+/* const initialValues: UserProps = {
   nombre: "",
   apellido: "",
   cedula: "",
@@ -38,13 +38,22 @@ const initialValues: UserProps = {
   dniCode: "V",
   sexo: "Masculino",
   plan: "monthly",
-};
+}; */
 
-export default function CreateUserLayout() {
+export default function UserLayout({
+  initialValues,
+  formType,
+  id,
+}: {
+  id: number | string;
+  formType: "create" | "update";
+  initialValues: UserProps;
+}) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const createUser = useUserStore((state) => state.fnCreateUser);
+  const updateUser = useUserStore((state) => state.fnUpdateUser);
 
   const handleOpenChange = (open: boolean) => {
     if (Object.values(form.formState.errors).length === 0) {
@@ -65,12 +74,15 @@ export default function CreateUserLayout() {
       ) {
         const dataFormatted = {
           ...dataToSend,
-          cedula: dataToSend.dniCode + dataToSend.cedula,
-          trainer: dataToSend.nombreTrainer + " " + dataToSend.apellidoTrainer,
+          cedula: `${dataToSend.dniCode}${dataToSend.cedula}`,
+          trainer: `${dataToSend.nombreTrainer} ${dataToSend.apellidoTrainer}`,
         };
         handleOpenChange(true);
-
-        createUser(dataFormatted);
+        if (formType === "create") {
+          createUser(dataFormatted);
+        } else {
+          updateUser(id as number, dataFormatted);
+        }
 
         form.reset(initialValues);
       }
