@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import ErrorsCard from "@/components/errors-card";
@@ -17,43 +18,54 @@ import {
   Form,
 } from "@/components/ui";
 import { UserProps } from "@/interface/interfaces";
-import { UserSchema } from "@/schemas/create-user.schema";
+import { UserSchema, UserUpdateSchema } from "@/schemas/create-user.schema";
 import { useUserStore } from "@/store/user-store.store";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import z from "zod";
-
-/* const initialValues: UserProps = {
-  nombre: "",
-  apellido: "",
-  cedula: "",
-  peso: undefined,
-  edad: undefined,
-  nombreTrainer: "",
-  apellidoTrainer: "",
-  dniCode: "V",
-  sexo: "Masculino",
-  plan: "monthly",
-}; */
 
 export default function UserLayout({
   initialValues,
   formType,
-  id,
 }: {
-  id: number | string;
+  // id: number | string;
   formType: "create" | "update";
   initialValues: UserProps;
 }) {
   const router = useRouter();
+  const params = useParams();
+  const userId = parseInt(params._id as string);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [userDataBody, setUserDataBody] = useState<UserProps>(initialValues);
 
   const createUser = useUserStore((state) => state.fnCreateUser);
   const updateUser = useUserStore((state) => state.fnUpdateUser);
+  const getUserById = useUserStore((state) => state.fnGetUserById);
+  // const data = useUserStore((state) => state.usersResponse.data);
+  const userFound = useUserStore((state) => state.selectedUser);
+
+  useEffect(() => {
+    if (formType === "update" && userId) {
+      getUserById(userId);
+    }
+  }, [userId]); // Se ejecuta cuando userId cambia
+
+  useEffect(() => {
+    if (userFound) {
+      // Asegurar que no sea null
+      setUserDataBody({ ...userFound, plan: "monthly" });
+      form.reset(userFound);
+    }
+  }, [userFound]); // Se ejecuta cuando userFound cambia
+
+  // console.log("data --> ", data);
+
+  console.log("userDataBody --> ", userDataBody);
+  console.log("userFound --> ", userFound);
 
   const handleOpenChange = (open: boolean) => {
     if (Object.values(form.formState.errors).length === 0) {
@@ -61,27 +73,31 @@ export default function UserLayout({
     }
   };
 
-  const form = useForm<z.infer<typeof UserSchema>>({
-    resolver: zodResolver(UserSchema),
-    defaultValues: initialValues,
+  const schema = formType === "create" ? UserSchema : UserUpdateSchema;
+
+  const form = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
+    defaultValues:
+      formType === "update" && userFound !== null
+        ? userDataBody
+        : initialValues,
+    mode: "onChange",
   });
 
-  const onSubmit = (dataToSend: z.infer<typeof UserSchema>) => {
+  const onSubmit: SubmitHandler<z.infer<typeof schema>> = (dataToSend) => {
     try {
       if (
         dataToSend !== initialValues &&
         Object.values(form.formState.errors).length === 0
       ) {
-        const dataFormatted = {
+        /* const dataFormatted = {
           ...dataToSend,
-          cedula: `${dataToSend.dniCode}${dataToSend.cedula}`,
-          trainer: `${dataToSend.nombreTrainer} ${dataToSend.apellidoTrainer}`,
-        };
+        }; */
         handleOpenChange(true);
         if (formType === "create") {
-          createUser(dataFormatted);
+          createUser(dataToSend);
         } else {
-          updateUser(id as number, dataFormatted);
+          updateUser(userId, dataToSend);
         }
 
         form.reset(initialValues);
@@ -212,16 +228,19 @@ export default function UserLayout({
             label={capitalizeFirstLetter("apellido del entrenador")}
           />
         </div>
-        <RadioGroupInput
-          control={form.control}
-          description=""
-          inputName="plan"
-          inputType=""
-          classNameContainer="-mt-3"
-          radioGroupClassName="flex flex-row"
-          label="Plan de pago"
-          items={["monthly", "weekly", "daily"]}
-        />
+        {formType === "create" && (
+          <RadioGroupInput
+            control={form.control}
+            description=""
+            inputName="plan"
+            inputType=""
+            classNameContainer="-mt-3"
+            radioGroupClassName="flex flex-row"
+            label="Plan de pago"
+            items={["monthly", "weekly", "daily"]}
+          />
+        )}
+
         {Object.keys(form.formState.errors).length > 0 && (
           <ErrorsCard errors={form.formState.errors} />
         )}
@@ -239,7 +258,7 @@ export default function UserLayout({
               type="submit"
               className="order-1 sm:order-2"
             >
-              Registrar
+              {formType === "create" ? "Registrar" : "Actualizar"}
             </Button>
           </div>
 
@@ -249,9 +268,9 @@ export default function UserLayout({
                 <span>
                   <CheckCircle size={40} weight="fill" />
                 </span>
-                <AlertDialogTitle>Registro Exitoso</AlertDialogTitle>
+                <AlertDialogTitle>{formType === "create" ? "Registro Exitoso" : "Actualización Exitosa" }</AlertDialogTitle>
                 <AlertDialogDescription className="text-white">
-                  Se ha procesado el registro del usuario.
+                  {formType === "create" ? "Se ha procesado el registro del usuario." : "Se ha actualizado el registro del usuario." }
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>

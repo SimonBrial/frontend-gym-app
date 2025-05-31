@@ -30,4 +30,9 @@ export const UserSchema = z.object({
   }),
 });
 
+export const UserUpdateSchema = UserSchema.extend({
+  plan: z.enum(["monthly", "weekly", "daily"]).optional(), // opcional en "update"
+});
+
+
 export type UserSchemaType = z.infer<typeof UserSchema>;

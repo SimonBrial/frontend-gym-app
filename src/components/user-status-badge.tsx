@@ -1,7 +1,9 @@
 import { Barbell } from "@phosphor-icons/react/dist/ssr";
 import TypographyText from "./typography-text";
+import { UserStatusType } from "@/types/types";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 
-export default function UserStatusBadge({ status }: { status: string }) {
+export default function UserStatusBadge({ status }: { status: UserStatusType }) {
   return (
     <div className="flex gap-2 justify-center items-center">
       <div
@@ -21,7 +23,7 @@ export default function UserStatusBadge({ status }: { status: string }) {
           <Barbell size={25} />
         </span>
         <TypographyText
-          description={status}
+          description={capitalizeFirstLetter(status)}
           fontjura={false}
           type="h2"
           classes="text-base"

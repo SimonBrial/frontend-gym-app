@@ -15,5 +15,5 @@ const initialValues: UserProps = {
 };
 
 export default function UpdateUserLayout() {
-  return <UserLayout formType="update" id={1} initialValues={initialValues} />;
+  return <UserLayout formType="update" initialValues={initialValues} />;
 }

@@ -9,14 +9,16 @@ export default function UserTableBody({ dataArr }: { dataArr: UserBody[] }) {
   return dataArr.map((inv: UserBody) => {
     const {
       ultimaActualizacion,
+      apellidoTrainer,
+      nombreTrainer,
       fechaRegistro,
       diasEnMora,
       ultimoPago,
       apellido,
-      trainer,
       cedula,
       nombre,
       edad,
+      sexo,
       peso,
       _id,
     } = inv;
@@ -36,6 +38,7 @@ export default function UserTableBody({ dataArr }: { dataArr: UserBody[] }) {
         <TableCell>{cedula}</TableCell>
         <TableCell>{edad}</TableCell>
         <TableCell>{peso}</TableCell>
+        <TableCell>{sexo}</TableCell>
         <TableCell className="">
           {format(fechaRegistro, "MM/dd/yyyy")}
         </TableCell>
@@ -43,7 +46,9 @@ export default function UserTableBody({ dataArr }: { dataArr: UserBody[] }) {
           {format(ultimaActualizacion, "MM/dd/yyyy")}
         </TableCell>
         <TableCell>{`${diasEnMora} días`}</TableCell>
-        <TableCell>{capitalizeFirstLetter(trainer)}</TableCell>
+        <TableCell>
+          {capitalizeFirstLetter(`${nombreTrainer} ${apellidoTrainer}`)}
+        </TableCell>
         <TableCell className="">{format(ultimoPago, "MM/dd/yyyy")}</TableCell>
         <TableCell className="flex gap-2.5">
           <BtnActions

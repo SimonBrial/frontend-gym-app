@@ -51,6 +51,13 @@ export default function UserTableHeader() {
           "last:w-[17%] text-white group-hover:text-principal font-bold first:rounded-tl-lg last:rounded-tr-lg"
         }
       >
+        <TypographyText description="Sexo" fontjura type="p" />
+      </TableHead>
+      <TableHead
+        className={
+          "last:w-[17%] text-white group-hover:text-principal font-bold first:rounded-tl-lg last:rounded-tr-lg"
+        }
+      >
         <TypographyText description="Fecha de Registro" fontjura type="p" />
       </TableHead>
       <TableHead
@@ -72,7 +79,7 @@ export default function UserTableHeader() {
           "last:w-[17%] text-white group-hover:text-principal font-bold first:rounded-tl-lg last:rounded-tr-lg"
         }
       >
-        <TypographyText description="Trainer" fontjura type="p" />
+        <TypographyText description="Entrenador" fontjura type="p" />
       </TableHead>
       <TableHead
         className={

@@ -4,6 +4,8 @@ type planType = "monthly" | "weekly" | "daily";
 
 type dniCodeType = "V" | "E";
 
-type sexType = "Masculino" | "Femenino";
+type genderType = "Masculino" | "Femenino";
 
-export type { TypeTitle, planType, dniCodeType, sexType };
+type UserStatusType = "solvente" | "moroso";
+
+export type { TypeTitle, planType, dniCodeType, genderType, UserStatusType };

@@ -3,27 +3,12 @@ import { UserBody } from "@/interface/interfaces";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { format } from "date-fns";
 
-export default function ReadDataCard({ data }: { data: UserBody[] }) {
+export default function ReadDataCard({ data }: { data: UserBody }) {
   return (
-    <ul className="w-full">
-      {data.map((item, index) => {
-        const {
-          ultimaActualizacion,
-          fechaRegistro,
-          diasEnMora,
-          ultimoPago,
-          apellido,
-          trainer,
-          cedula,
-          nombre,
-          edad,
-          peso,
-        } = item;
-        return (
-          <li
-            key={index}
-            className="p-6 justify-center items-center border-b border-slate-800 last:border-b-0"
-          >
+    <>
+      {data ? (
+        <div className="w-full">
+          <div className="p-6 justify-center items-center border-b border-slate-800 last:border-b-0">
             <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
               <TypographyText
                 description={capitalizeFirstLetter("nombre")}
@@ -32,7 +17,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={capitalizeFirstLetter(nombre)}
+                description={capitalizeFirstLetter(data.nombre)}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -46,7 +31,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={apellido}
+                description={data.apellido}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -60,7 +45,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={cedula}
+                description={data.cedula}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -74,7 +59,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={edad.toString()}
+                description={data.edad.toString()}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -88,7 +73,21 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={`${peso} Kg`}
+                description={`${data.peso} Kg`}
+                fontjura={false}
+                type="p"
+                classes="text-base pl-2"
+              />
+            </div>
+            <div className="grid grid-cols-2 justify-center items-center py-1 border border-transparent border-b-slate-800 w-full ">
+              <TypographyText
+                description={capitalizeFirstLetter("sexo")}
+                fontjura={false}
+                type="p"
+                classes="text-base pl-2"
+              />
+              <TypographyText
+                description={`${data.sexo}`}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -102,7 +101,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={format(fechaRegistro, "MM/dd/yyyy")}
+                description={format(data.fechaRegistro, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -116,7 +115,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={format(ultimoPago, "MM/dd/yyyy")}
+                description={format(data.ultimoPago, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -130,7 +129,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={`${diasEnMora} días`}
+                description={`${data.diasEnMora} días`}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -144,7 +143,7 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={trainer}
+                description={`${data.nombreTrainer} ${data.apellidoTrainer}`}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
@@ -158,15 +157,25 @@ export default function ReadDataCard({ data }: { data: UserBody[] }) {
                 classes="text-base pl-2"
               />
               <TypographyText
-                description={format(ultimaActualizacion, "MM/dd/yyyy")}
+                description={format(data.ultimaActualizacion, "MM/dd/yyyy")}
                 fontjura={false}
                 type="p"
                 classes="text-base pl-2"
               />
             </div>
-          </li>
-        );
-      })}
-    </ul>
+          </div>
+        </div>
+      ) : (
+        <div className="border border-slate-600 w-full p-6 bg-slate-900 rounded-lg">
+          <TypographyText
+            description="No hay datos para mostrar."
+            fontjura
+            type="p"
+            color="text-principal"
+            classes="text-center text-lg hidden sm:block"
+          />
+        </div>
+      )}
+    </>
   );
 }

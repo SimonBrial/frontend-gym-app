@@ -25,6 +25,7 @@ interface Actions {
 }
 
 interface States {
+  selectedUser: UserBody | null;
   users: UserBody[];
   usersResponse: ResponseBody<UserBody>;
 }
@@ -32,6 +33,7 @@ interface States {
 export const useUserStore = create<States & Actions>()((set, get) => {
   return {
     // TODO: States
+    selectedUser: null,
     users: [],
     usersResponse: objectResponse,
 
@@ -60,6 +62,7 @@ export const useUserStore = create<States & Actions>()((set, get) => {
 
         if (!userFound) {
           set({
+            selectedUser: null,
             usersResponse: {
               status: "failure",
               message: "User not found",
@@ -71,18 +74,15 @@ export const useUserStore = create<States & Actions>()((set, get) => {
         }
 
         set({
-          usersResponse: {
-            status: "success",
-            message: "User fetched successfully",
-            data: [userFound],
-            error: null,
-          },
+          selectedUser: userFound,
         });
+        console.log("User found and set -->", userFound);
+
       } catch (error) {
         console.error("Error fetching user by ID:", error);
       }
     },
-    fnCreateUser: async (userToCreate) => {
+    fnCreateUser: async (userToCreate: UserBody) => {
       try {
         // console.log("From Store userToCreate --> ", userToCreate);
         const { usersResponse } = get();
@@ -107,8 +107,11 @@ export const useUserStore = create<States & Actions>()((set, get) => {
           cedula: userToCreate.cedula,
           edad: userToCreate.edad,
           peso: userToCreate.peso,
-          trainer: userToCreate.trainer,
+          nombreTrainer: userToCreate.nombreTrainer,
+          apellidoTrainer: userToCreate.apellidoTrainer,
           ultimoPago: new Date(),
+          dniCode: userToCreate.dniCode,
+          sexo: userToCreate.sexo,
           diasEnMora: 0,
           // plan: userToCreate.plan,
           fechaRegistro: new Date(),

@@ -15,12 +15,14 @@ import { useUserStore } from "@/store/user-store.store";
 import { useEffect } from "react";
 import UserTableHeader from "./users/user-table-header";
 import UserTableBody from "./users/user-table-body";
+import { UserBody } from "@/interface/interfaces";
 // import { usePathname } from "next/navigation";
 
 export default function DesktopTable() {
   //const path = usePathname();
   const getUsers = useUserStore((state) => state.fnGetUsers);
-  const users = useUserStore((state) => state.usersResponse.data);
+  const users: UserBody[] = useUserStore((state) => state.usersResponse.data);
+
   /* const createUser = useUserStore((state) => state.fnCreateUser); */
   // console.log(users);
 
@@ -28,7 +30,7 @@ export default function DesktopTable() {
     /*  if (users.length === 0 ) {
     } */
     getUsers();
-  }, [users]);
+  }, []);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { TypeTitle, dniCodeType, planType, sexType } from "../types/types";
+import { TypeTitle, dniCodeType, planType, genderType } from "../types/types";
 
 interface NavSections {
   label: string;
@@ -21,11 +21,14 @@ interface UserBody {
   apellido: string;
   cedula: string;
   edad: number;
+  dniCode: dniCodeType;
   peso: number;
+  sexo: genderType;
   fechaRegistro: Date;
   ultimoPago: Date;
   diasEnMora: number;
-  trainer: string;
+  nombreTrainer: string;
+  apellidoTrainer: string;
   ultimaActualizacion: Date;
   // acciones: string;
 }
@@ -65,7 +68,7 @@ interface InputProps {
 
 interface UserProps {
   plan: planType;
-  sexo: sexType;
+  sexo: genderType;
   dniCode: dniCodeType;
   nombre: string;
   apellido: string;
