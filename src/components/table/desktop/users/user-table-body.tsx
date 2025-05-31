@@ -15,6 +15,7 @@ export default function UserTableBody({ dataArr }: { dataArr: UserBody[] }) {
       diasEnMora,
       ultimoPago,
       apellido,
+      dniCode,
       cedula,
       nombre,
       edad,
@@ -35,7 +36,7 @@ export default function UserTableBody({ dataArr }: { dataArr: UserBody[] }) {
         <TableCell className="font-medium">
           {capitalizeFirstLetter(apellido)}
         </TableCell>
-        <TableCell>{cedula}</TableCell>
+        <TableCell>{`${dniCode}${cedula}`}</TableCell>
         <TableCell>{edad}</TableCell>
         <TableCell>{peso}</TableCell>
         <TableCell>{sexo}</TableCell>

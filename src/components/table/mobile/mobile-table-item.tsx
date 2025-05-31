@@ -22,7 +22,7 @@ export default function MobileTableItem({
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className="flex gap-2 justify-center items-center">
-          <UserStatusBadge status={idx % 2 ? "Solvente" : "En Mora"} />
+          <UserStatusBadge status={idx % 2 ? "solvente" : "moroso"} />
           <BtnActions
             iconTrigger={<DotsThreeVertical size={32} />}
             titleDescription="¿Eliminara este cliente?"
@@ -136,7 +136,11 @@ export default function MobileTableItem({
           classes="text-base pl-2"
         />
         <TypographyText
-          description={item.trainer ? item.trainer : "No asignado"}
+          description={
+            item.nombreTrainer && item.apellidoTrainer
+              ? `${item.nombreTrainer} ${item.apellidoTrainer}`
+              : "No asignado"
+          }
           fontjura={false}
           type="p"
           classes="text-base pl-2"

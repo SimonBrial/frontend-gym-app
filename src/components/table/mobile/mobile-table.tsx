@@ -11,7 +11,7 @@ export default function MobileTable() {
   const users = useUserStore((state) => state.usersResponse.data);
 
   useEffect(() => {
-      getUsers(true); // Ejecuta la función al montar el componente
+      getUsers(); // Ejecuta la función al montar el componente
   }, []);
   
   return (
