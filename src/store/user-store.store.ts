@@ -86,6 +86,8 @@ export const useUserStore = create<States & Actions>()((set, get) => {
       try {
         // console.log("From Store userToCreate --> ", userToCreate);
         const { usersResponse } = get();
+
+        console.log("from store userToCreate --> ", userToCreate);
         const userFound = usersResponse.data.find(
           (user) => user.cedula === userToCreate.cedula,
         );

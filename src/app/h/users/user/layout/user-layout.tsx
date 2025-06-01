@@ -28,13 +28,24 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import z from "zod";
 
+const initialValues: UserProps = {
+  nombre: "",
+  apellido: "",
+  cedula: "",
+  peso: undefined,
+  edad: undefined,
+  nombreTrainer: "",
+  apellidoTrainer: "",
+  dniCode: "V",
+  sexo: "Masculino",
+  plan: "monthly",
+};
+
 export default function UserLayout({
-  initialValues,
   formType,
 }: {
   // id: number | string;
   formType: "create" | "update";
-  initialValues: UserProps;
 }) {
   const router = useRouter();
   const params = useParams();
@@ -86,6 +97,7 @@ export default function UserLayout({
 
   const onSubmit: SubmitHandler<z.infer<typeof schema>> = (dataToSend) => {
     try {
+      console.log("dataToSend --> ", dataToSend);
       if (
         dataToSend !== initialValues &&
         Object.values(form.formState.errors).length === 0
@@ -149,8 +161,9 @@ export default function UserLayout({
               optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white "
               itemContainerClasses="focus:bg-neutralBlack/50 text-white"
               label={capitalizeFirstLetter("codigo")}
-              options={["V", "E"]}
-              placeholder="Codigo"
+              selectLabel="Codigo de DNI"
+              options={["Indicar codigo", "V", "E"]}
+              textDefault="Indicar codigo"
             />
             <TextInput
               control={form.control}
@@ -203,9 +216,10 @@ export default function UserLayout({
             inputContainerClasses="w-full bg-slate-800 border-slate-700 outline-none  focus:outline-none focus:border-principal focus:ring-1 focus:ring-principal"
             optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white "
             itemContainerClasses="focus:bg-neutralBlack/50 text-white"
-            label={capitalizeFirstLetter("sexo")}
-            options={["Masculino", "Femenino"]}
-            placeholder="Selecciona un genero"
+            label={capitalizeFirstLetter("genero")}
+            selectLabel="Genero"
+            options={["Indicar genero", "Masculino", "Femenino"]}
+            textDefault="Indicar genero"
           />
         </div>
         <div className="flex items-center flex-col sm:flex-row gap-2">
@@ -268,9 +282,15 @@ export default function UserLayout({
                 <span>
                   <CheckCircle size={40} weight="fill" />
                 </span>
-                <AlertDialogTitle>{formType === "create" ? "Registro Exitoso" : "Actualización Exitosa" }</AlertDialogTitle>
+                <AlertDialogTitle>
+                  {formType === "create"
+                    ? "Registro Exitoso"
+                    : "Actualización Exitosa"}
+                </AlertDialogTitle>
                 <AlertDialogDescription className="text-white">
-                  {formType === "create" ? "Se ha procesado el registro del usuario." : "Se ha actualizado el registro del usuario." }
+                  {formType === "create"
+                    ? "Se ha procesado el registro del usuario."
+                    : "Se ha actualizado el registro del usuario."}
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>

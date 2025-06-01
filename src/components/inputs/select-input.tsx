@@ -14,10 +14,13 @@ import {
   FormLabel,
   FormItem,
 } from "../ui/form";
+import { SelectGroup, SelectLabel, SelectSeparator } from "../ui/select";
 
 interface SelectInputProps extends InputProps {
   options: string[];
   inputContainerClasses?: string;
+  selectLabel: string;
+  textDefault: string;
   optionsContainerClasses?: string;
   itemContainerClasses?: string;
 }
@@ -27,6 +30,8 @@ export default function SelectInput({
   itemContainerClasses,
   classNameContainer,
   description,
+  selectLabel,
+  textDefault,
   inputName,
   options,
   control,
@@ -43,24 +48,30 @@ export default function SelectInput({
             <FormLabel />
             <Select
               onValueChange={field.onChange}
-              defaultValue={field.value}
+              defaultValue={textDefault}
               {...props}
             >
               <FormControl>
                 <SelectTrigger className={inputContainerClasses}>
-                  <SelectValue placeholder={props.placeholder} />
+                  <SelectValue placeholder={textDefault} />
                 </SelectTrigger>
               </FormControl>
               <SelectContent className={optionsContainerClasses}>
-                {options.map((option, idx) => (
-                  <SelectItem
-                    className={itemContainerClasses}
-                    value={option}
-                    key={idx}
-                  >
-                    {option}
-                  </SelectItem>
-                ))}
+                <SelectGroup>
+                  <SelectLabel className="text-[10px] text-principal">
+                    {selectLabel}
+                  </SelectLabel>
+                  <SelectSeparator className="mx-2 bg-slate-600" />
+                  {options.map((option, idx) => (
+                    <SelectItem
+                      className={itemContainerClasses}
+                      value={option}
+                      key={idx}
+                    >
+                      {option}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
               </SelectContent>
             </Select>
             <FormDescription>{description}</FormDescription>

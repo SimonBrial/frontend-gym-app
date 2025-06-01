@@ -27,14 +27,15 @@ export default function NumberInput({
                 //defaultValue={1}
                 value={
                   field.value !== undefined && field.value !== null
-                    ? Number(field.value)
+                    ? String(field.value).replace(/^0+(?=\d)/, "")
                     : ""
                 }
-                onChange={(e) =>
-                  field.onChange(
-                    e.target.value /* ? Number(e.target.value) : undefined, */,
-                  )
-                }
+                onChange={(e) => {
+                  const cleanedValue = String(e.target.value).replace(/^0+(?=\d)/, "");
+                  field.onChange(cleanedValue);
+                }}
+
+
                 /* min={props.min}
                   max={props.max} */
               />
