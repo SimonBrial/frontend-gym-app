@@ -36,8 +36,8 @@ const initialValues: UserProps = {
   edad: undefined,
   nombreTrainer: "",
   apellidoTrainer: "",
-  dniCode: "V",
-  sexo: "Masculino",
+  dniCode: "Seleccionar el codigo",
+  sexo: "Indicar el genero",
   plan: "monthly",
 };
 
@@ -100,7 +100,9 @@ export default function UserLayout({
       console.log("dataToSend --> ", dataToSend);
       if (
         dataToSend !== initialValues &&
-        Object.values(form.formState.errors).length === 0
+        Object.values(form.formState.errors).length === 0 &&
+        dataToSend.dniCode !== undefined &&
+        dataToSend.sexo !== undefined
       ) {
         /* const dataFormatted = {
           ...dataToSend,
@@ -118,6 +120,11 @@ export default function UserLayout({
       console.log(err);
     }
   };
+
+  const errores = form.formState.errors;
+  const { error } = form.getFieldState("dniCode");
+  console.log(errores);
+  console.log(error?.message);
 
   return (
     <Form {...form}>
@@ -156,13 +163,15 @@ export default function UserLayout({
               description=""
               inputName="dniCode"
               inputType=""
-              classNameContainer="text-white w-full flex flex-col gap-1.5 focus:outline-none focus:border-principal w-full"
-              inputContainerClasses="w-full bg-slate-800 border-slate-700 outline-none  focus:outline-none focus:border-principal focus:ring-1 focus:ring-principal"
-              optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white "
-              itemContainerClasses="focus:bg-neutralBlack/50 text-white"
               label={capitalizeFirstLetter("codigo")}
+              classNameContainer="text-white w-full flex flex-col gap-1.5 focus:outline-none focus:border-principal w-full"
+              inputContainerClasses={`w-full bg-slate-800 border-slate-700 outline-none  focus:outline-none focus:border-principal focus:ring-1 focus:ring-principal ${
+                form.formState.errors.dniCode ? "border-red-500" : ""
+              }`}
+              optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white"
+              itemContainerClasses="focus:bg-neutralBlack/50 text-white"
               selectLabel="Codigo de DNI"
-              options={["Indicar codigo", "V", "E"]}
+              options={["Seleccionar el codigo", "V", "E"]}
               textDefault="Indicar codigo"
             />
             <TextInput
@@ -212,14 +221,16 @@ export default function UserLayout({
             description=""
             inputName="sexo"
             inputType=""
-            classNameContainer="text-white w-full flex flex-col gap-1.5 focus:outline-none focus:border-principal w-full"
-            inputContainerClasses="w-full bg-slate-800 border-slate-700 outline-none  focus:outline-none focus:border-principal focus:ring-1 focus:ring-principal"
-            optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white "
-            itemContainerClasses="focus:bg-neutralBlack/50 text-white"
             label={capitalizeFirstLetter("genero")}
             selectLabel="Genero"
-            options={["Indicar genero", "Masculino", "Femenino"]}
+            options={["Indicar el genero", "Masculino", "Femenino"]}
             textDefault="Indicar genero"
+            inputContainerClasses={`w-full bg-slate-800 border-slate-700 outline-none  focus:outline-none focus:border-principal focus:ring-1 focus:ring-principal ${
+              form.formState.errors.sexo ? "border-red-500" : ""
+            }`}
+            classNameContainer="text-white w-full flex flex-col gap-1.5 focus:outline-none focus:border-principal w-full"
+            optionsContainerClasses="w-full bg-slate-800 border-slate-700 text-white"
+            itemContainerClasses="focus:bg-neutralBlack/50 text-white"
           />
         </div>
         <div className="flex items-center flex-col sm:flex-row gap-2">
@@ -256,8 +267,19 @@ export default function UserLayout({
         )}
 
         {Object.keys(form.formState.errors).length > 0 && (
-          <ErrorsCard errors={form.formState.errors} />
+          <ErrorsCard
+            errors={form.formState.errors}
+            /* specialErrors={[
+              form.formState.errors.sexo?.root?.message
+                ? form.formState.errors.sexo?.root.message
+                : "",
+              form.formState.errors.dniCode?.root.message
+                ? form.formState.errors.dniCode?.root.message
+                : "",
+            ]} */
+          />
         )}
+        {/* <p>{gender.error?.message}</p> */}
         <AlertDialog onOpenChange={handleOpenChange} open={isOpen}>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <Button

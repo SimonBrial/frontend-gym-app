@@ -68,8 +68,8 @@ interface InputProps {
 
 interface UserProps {
   plan: planType;
-  sexo: genderType;
-  dniCode: dniCodeType;
+  sexo: string | genderType;
+  dniCode: string | dniCodeType;
   nombre: string;
   apellido: string;
   cedula: string;
